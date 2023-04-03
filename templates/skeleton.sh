@@ -5,49 +5,51 @@
 
 ## Help function
 function helpFunction(){
-echo "Help
-----------------------------------------------------
-
-help/Help
-* Display this help message and exit"
+	printf '%s\n' \
+	'Help' \
+	'----------------------------------------------------' \
+	' ' \
+	'help/Help' \
+	'* Display this help message and exit'
 }
 
 ## Function to run program
 function runProgram(){
-echo "Main
-----------------------------------------------------"
+	printf '%s\n' \
+	'Main' \
+	'----------------------------------------------------'
 }
 
-## Main, read passed flags 
-echo "PROGRAM NAME
-----------------------------------------------------
+## Main, read passed flags
+	printf '%s\n' \
+	'PROGRAM NAME' \
+	'----------------------------------------------------' \
+	' ' \
+	'Checking flags passed'
+	'----------------------------------------------------'
 
-Checking flags passed
-----------------------------------------------------"
-
-## Check passed flags 
-case "$1" in 
+## Check passed flags
+case "$1" in
 [Hh]elp)
-echo "
-Running Help function
-----------------------------------------------------"
-helpFunction
-exit
-;;
+	printf '%s\n' \
+	'Running Help function' \
+	'----------------------------------------------------'
+	helpFunction
+	exit
+	;;
 [Mm]ain)
-echo "
-Running main function
-----------------------------------------------------"
-runProgram
-;;
+	printf '%s\n' \
+	'Running main function'
+	'----------------------------------------------------'
+	runProgram
+	;;
 *)
-echo "
-ISSUE DETECTED - Invalid input detected!
-----------------------------------------------------
-Running help script and exiting.
-Re-run script with valid input"
-helpFunction
-exit
-;;
+	printf '%s\n' \
+	'ISSUE DETECTED - Invalid input detected!' \
+	'----------------------------------------------------' \
+	'Running help script and exiting.' \
+	'Re-run script with valid input'
+	helpFunction
+	exit
+	;;
 esac
-
