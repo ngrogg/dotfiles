@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+use warnings;
+use strict;
 
 # PROGRAM NAME
 # By Nicholas Grogg
@@ -11,4 +13,3 @@ sub runProgram {
 
 # Run the function
 runProgram();
-
