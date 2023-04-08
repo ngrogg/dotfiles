@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+# Program name
 # description goes here
 # By Nicholas Grogg
 
@@ -10,13 +11,18 @@ function helpFunction(){
 	'----------------------------------------------------' \
 	' ' \
 	'help/Help' \
-	'* Display this help message and exit'
+	'* Display this help message and exit' \
+	' ' \
+	'run/Run' \
+	'* PROGRAM DESCRIPTION ' \
+	'* ARGUMENTS ' \
+	'Ex. ./SCRIPT run ARG ARG'
 }
 
 ## Function to run program
 function runProgram(){
 	printf '%s\n' \
-	'Main' \
+	'RUN' \
 	'----------------------------------------------------'
 }
 
@@ -25,7 +31,7 @@ function runProgram(){
 	'PROGRAM NAME' \
 	'----------------------------------------------------' \
 	' ' \
-	'Checking flags passed'
+	'Checking flags passed' \
 	'----------------------------------------------------'
 
 ## Check passed flags
@@ -33,13 +39,13 @@ case "$1" in
 [Hh]elp)
 	printf '%s\n' \
 	'Running Help function' \
-	'----------------------------------------------------'
+	'----------------------------------------------------' \
 	helpFunction
 	exit
 	;;
-[Mm]ain)
+[Rr]un)
 	printf '%s\n' \
-	'Running main function'
+	'Running script' \
 	'----------------------------------------------------'
 	runProgram
 	;;
