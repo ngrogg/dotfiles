@@ -3,12 +3,10 @@
 
 fn main() {
     // Keep main minimal, run program in function
-    runProgram();
+    run_program();
 }
 
-// Function to run program, allow in place so code doesn't alert for non-snake-case function
-#[allow(non_snake_case)]
-fn runProgram(){
-    // Declare variables 
+// Function to run program
+fn run_program() {
+    // Declare variables
 }
-
