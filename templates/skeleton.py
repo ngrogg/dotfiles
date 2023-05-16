@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 # PROGRAM
+# DESCRIPTION
 # By Nicholas Grogg
 
 # Function to run program
@@ -10,4 +11,3 @@ def runProgram():
 
 # Run main function
 runProgram()
-

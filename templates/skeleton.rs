@@ -1,4 +1,5 @@
 // PROGRAM NAME
+// PROGRAM DESCRIPTION
 // By Nicholas Grogg
 
 fn main() {

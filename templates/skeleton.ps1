@@ -1,4 +1,5 @@
 # SCRIPT
+# DESCRIPTION
 # By Nicholas Grogg
 
 # Help
