@@ -43,6 +43,12 @@ set showcmd
 " Do incremental searching
 set incsearch
 
+" Sets a tab to be four spaces
+set tabstop=4
+
+" Converts tabs to spaces, useful if file moves to other systems
+set expandtab
+
 " " Visual changes
 " Show line numbers
 set number
