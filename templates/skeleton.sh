@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-# Program name
-# description goes here
+# Program
+# Description
 # By Nicholas Grogg
 
 ## Help function

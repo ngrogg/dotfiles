@@ -1,5 +1,5 @@
-/* PROGRAM NAME
- * PROGRAM DESCRIPTION
+/* PROGRAM
+ * DESCRIPTION
  * By Nicholas Grogg
  * */
 
@@ -19,4 +19,3 @@ int main(){
 	runProgram();
 	return 0;
 }
-
