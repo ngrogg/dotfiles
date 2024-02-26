@@ -1,5 +1,5 @@
-/* PROGRAM
- * DESCRIPTION
+/* PROGRAM NAME
+ * PROGRAM DESCRIPTION
  * By Nicholas Grogg
  * */
 

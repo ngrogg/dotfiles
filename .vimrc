@@ -59,26 +59,80 @@ colorscheme desert
 
 " configure CursorLines
 set cursorline
-hi CursorLine cterm=NONE ctermbg=black ctermfg=white
-hi CursorLineNr cterm=bold ctermbg=blue ctermfg=black
+hi CursorLine cterm=NONE ctermbg=232 ctermfg=15
+hi CursorLineNr cterm=bold ctermbg=33 ctermfg=232
+
+" " Vim Statusline
+" Enable statusline
+set laststatus=2
+
+" Show current mode
+" Define mode options
+let g:currentmode={
+       \ 'n'  : 'NORMAL ',
+       \ 'v'  : 'VISUAL ',
+       \ 'V'  : 'V·Line ',
+       \ "\<C-V>" : 'V·Block ',
+       \ 'i'  : 'INSERT ',
+       \ 'R'  : 'R ',
+       \ 'Rv' : 'V·Replace ',
+       \ 'c'  : 'Command ',
+       \}
+
+" Define color
+highlight Status1 ctermbg=33 ctermfg=232
+highlight Status2 ctermbg=232 ctermfg=15
+
+" Append to status line
+set statusline+=\ %{toupper(g:currentmode[mode()])}%#Status1#
+
+" Show full file path
+set statusline+=File\ Path:%F
+
+" Show if current file has been modified
+set statusline+=%{&modified?'[+]':''}
+
+" Set following options to right of window
+set statusline+=%=
+
+" Whitespace
+set statusline+=%#Status2#
+set statusline+=\\|
+
+" Show current line number
+set statusline+=Line\ Number:%l
+
+" Whitespace
+set statusline+=\\|
+
+" Show total number of lines in file
+set statusline+=Total:%L
+
+" Whitespace
+set statusline+=\\|
+
+" Show percentage through file
+set statusline+=%p%%\|
 
 " " Vim Plugin configurations
 " Vim preview stuff
 let g:livepreview_previewer = 'evince'
 
-" For Lightline
-set laststatus=2
-set noshowmode
-
-" Set lightline theme
-let g:lightline = {
-			\'colorscheme':'wombat',
-			\}
-
 " YCM disable error checking
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
+
+" " Taglist
+" Display taglist window on the right
+let Tlist_Use_Right_Window = 1
+
+" Set default window size, based on percentage
+let g:Tlist_WinWidth= winwidth(0) * 15/100
+
+" " Nerdtree
+" Set default window size, based on percentage
+let g:NERDTreeWinSize= winwidth(0) * 15/100
 
 " " Ale stuff
 " ALE disable auto-complete
@@ -102,10 +156,10 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = {'python':['pylint'],
         \'cpp':['g++'],
         \'c':['gcc'],
-	\'powershell':['powershell'],
-        \'java': ['javac'],
-	\'bash': ['spellcheck'],
-	\'perl': ['perl','perlcritic']}
+	    \'powershell':['powershell'],
+	    \'bash': ['spellcheck'],
+	    \'go': ['golangci-lint', 'gofmt'],
+	    \'perl': ['perl','perlcritic']}
 let g:ale_fixers = { '*': ['trim_whitespace', 'remove_trailing_lines'],
         \'cpp': ['clangtidy','clang-format'],
         \'rust': ['rustfmt']}
@@ -113,6 +167,16 @@ let g:ale_fixers = { '*': ['trim_whitespace', 'remove_trailing_lines'],
 " " Rust vim stuff
 " Run rustfmt automatically when saving to buffer
 let g:rustfmt_autosave = 1
+
+" " Go Vim stuff
+" don't jump to errors after metalinter is invoked
+let g:go_jump_to_error = 0
+
+" run go imports on file save
+let g:go_fmt_command = "goimports"
+
+" automatically highlight variable your cursor is on
+let g:go_auto_sameids = 0
 
 " " Vim Template stuff
 if has("autocmd")
@@ -153,9 +217,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
 
-" Lightline status bar, makes status bar pretty
-Plug 'itchyny/lightline.vim'
-
 " Latex preview
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
@@ -165,8 +226,24 @@ Plug 'dense-analysis/ale'
 " rust.vim
 Plug 'rust-lang/rust.vim'
 
+" vim.go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " powershell.vim
 Plug 'pprovost/vim-ps1'
+
+" Multi-cursor plugin
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+" Taglist plugin
+Plug 'yegappan/taglist'
+
+" Vim Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Vim NerdTree
+Plug 'preservim/nerdtree'
 
 " Vim wiki plugin
 Plug 'vimwiki/vimwiki'
