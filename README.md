@@ -16,5 +16,5 @@ Included are the following files: <br>
 		- Rustfmt
 	* YouCompleteMe
 	 	- build-essential cmake3 python3-dev
-		- Install YouCompleteMe with clangd and rust support: `cd ~/.vim/plugged/YouCompleteMe; python3 install.py --clangd-completer --rust-completer`
-* **.zshrc**, ZSH configuration file. Goes in `~/.zshrc`.
+		- Install YouCompleteMe with clangd, golang and rust support: `cd ~/.vim/plugged/YouCompleteMe; python3 install.py --clangd-completer --go-completer --rust-completer`
+* **.zshrc**, ZSH configuration file. Goes in `~/.zshrc`. Requires that filepath `~/.zsh/cache' exists.
