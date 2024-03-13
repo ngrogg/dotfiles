@@ -124,8 +124,35 @@ let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 
 " " Taglist
+" Per help this is required
+filetype on
+
+" Use F8 to open taglist
+nnoremap <silent> <F8> :TlistToggle<CR>
+
+" Exit vim when only the Taglist window is present
+let Tlist_Exit_OnlyWindow = 1
+
+" Change focus to TagList when opened
+let Tlist_GainFocus_On_ToggleOpen = 1
+
 " Display taglist window on the right
 let Tlist_Use_Right_Window = 1
+
+" Set scope for shell
+let tlist_sh_settings = 'sh;f:functions;v:variables'
+
+" Set scope for C++
+let tlist_cpp_settings = 'c++;c:classes;f:functions;v:variables'
+
+" Set scope for Python
+let tlist_python_settings = 'python;c:classes;f:functions;v:variables'
+
+" Set scope for GoLang
+let tlist_go_settings = 'go;f:functions;v:variables'
+
+" Set scope for Perl
+let tlist_perl_settings = 'perl;s:subroutines'
 
 " Set default window size, based on percentage
 let g:Tlist_WinWidth= winwidth(0) * 15/100
