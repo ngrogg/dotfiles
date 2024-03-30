@@ -65,6 +65,7 @@ hi CursorLineNr cterm=bold ctermbg=33 ctermfg=232
 " " Vim Statusline
 " Enable statusline
 set laststatus=2
+set statusline=
 
 " Show current mode
 " Define mode options
@@ -160,6 +161,15 @@ let g:Tlist_WinWidth= winwidth(0) * 15/100
 " " Nerdtree
 " Set default window size, based on percentage
 let g:NERDTreeWinSize= winwidth(0) * 15/100
+
+" Toggle NERDTree
+nnoremap <silent> <F4> :NERDTreeToggle<CR>
+
+" Refresh NERDTree
+nnoremap <silent> <F5> :NERDTreeRefreshRoot<CR>
+
+" Close vim if NERDTree if last window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " " Ale stuff
 " ALE disable auto-complete
