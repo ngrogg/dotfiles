@@ -168,7 +168,7 @@ nnoremap <silent> <F4> :NERDTreeToggle<CR>
 " Refresh NERDTree
 nnoremap <silent> <F5> :NERDTreeRefreshRoot<CR>
 
-" Close vim if NERDTree if last window
+" Close vim if NERDTree if is last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " " Ale stuff
@@ -195,7 +195,7 @@ let g:ale_linters = {'python':['pylint'],
         \'c':['gcc'],
 	    \'powershell':['powershell'],
 	    \'bash': ['spellcheck'],
-	    \'go': ['golangci-lint', 'gofmt'],
+	    \'go': ['gopls', 'golangci-lint', 'gofmt'],
 	    \'perl': ['perl','perlcritic']}
 let g:ale_fixers = { '*': ['trim_whitespace', 'remove_trailing_lines'],
         \'cpp': ['clangtidy','clang-format'],
@@ -215,6 +215,13 @@ let g:go_fmt_command = "goimports"
 " automatically highlight variable your cursor is on
 let g:go_auto_sameids = 0
 
+" gopls config for vim-go
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
+" Disable auto template in favor of my own
+let g:go_template_autocreate = 0
+
 " " Vim Template stuff
 if has("autocmd")
   augroup templates
@@ -224,6 +231,7 @@ if has("autocmd")
     autocmd BufNewFile *.ps1 0r ~/.vim/templates/skeleton.ps1
     autocmd BufNewFile *.rs 0r ~/.vim/templates/skeleton.rs
     autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+    autocmd BufNewFile *.go 0r ~/.vim/templates/skeleton.go
   augroup END
 endif
 
