@@ -1,10 +1,10 @@
-// PROGRAM NAME
-// PROGRAM DESCRIPTION
+// PROGRAM
+// DESCRIPTION
 // By Nicholas Grogg
 
 fn main() {
     // Keep main minimal, run program in function
-    run_program();
+    runProgram();
 }
 
 // Function to run program

@@ -4,6 +4,9 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Required for vimwiki
+filetype plugin on
+
 " force 256 colors
 set t_Co=256
 
@@ -124,39 +127,24 @@ let g:ycm_show_diagnostics_ui = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 
-" " Taglist
-" Per help this is required
-filetype on
+" " Tagbar
+" Toggle Tagbar
+nmap <F8> :TagbarToggle<CR>
 
-" Use F8 to open taglist
-nnoremap <silent> <F8> :TlistToggle<CR>
+" Set Tagbar width to 15%
+let g:tagbar_width = max([15, winwidth(0) / 5])
 
-" Exit vim when only the Taglist window is present
-let Tlist_Exit_OnlyWindow = 1
+" Autoclose Nerdtree if Tagbar and Nerdtree are the only windows open
+let g:tagbar_autoclose_netrw = 1
 
-" Change focus to TagList when opened
-let Tlist_GainFocus_On_ToggleOpen = 1
+" Tagbar set autofocus on open
+let g:tagbar_autofocus = 1
 
-" Display taglist window on the right
-let Tlist_Use_Right_Window = 1
+" Set Tagbar to be case insensitive
+let g:tagbar_case_insensitive = 1
 
-" Set scope for shell
-let tlist_sh_settings = 'sh;f:functions;v:variables'
-
-" Set scope for C++
-let tlist_cpp_settings = 'c++;c:classes;f:functions;v:variables'
-
-" Set scope for Python
-let tlist_python_settings = 'python;c:classes;f:functions;v:variables'
-
-" Set scope for GoLang
-let tlist_go_settings = 'go;f:functions;v:variables'
-
-" Set scope for Perl
-let tlist_perl_settings = 'perl;s:subroutines'
-
-" Set default window size, based on percentage
-let g:Tlist_WinWidth= winwidth(0) * 15/100
+" Show line numbers for tags in tag window, 1 = absolute line numbers
+let g:tagbar_show_tag_linenumbers = 1
 
 " " Nerdtree
 " Set default window size, based on percentage
@@ -281,7 +269,10 @@ Plug 'pprovost/vim-ps1'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Taglist plugin
-Plug 'yegappan/taglist'
+"Plug 'yegappan/taglist'
+
+" Tagbar plugin
+Plug 'preservim/tagbar'
 
 " Vim Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

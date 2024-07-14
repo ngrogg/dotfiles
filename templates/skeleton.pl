@@ -3,7 +3,7 @@ use warnings;
 use strict;
 
 # PROGRAM NAME
-# PROGRAM DESCRIPTION
+# DESCRIPTION
 # By Nicholas Grogg
 
 # Function to run program
