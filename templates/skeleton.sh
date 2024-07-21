@@ -1,10 +1,20 @@
 #!/usr/bin/bash
 
-# Program
-# Description
+# Program name
+# description goes here
 # By Nicholas Grogg
 
-## Help function
+# Color variables
+## Errors
+red=$(tput setaf 1)
+## Clear checks
+green=$(tput setaf 2)
+## User input required
+yellow=$(tput setaf 3)
+## Set text back to standard terminal font
+normal=$(tput sgr0)
+
+# Help function
 function helpFunction(){
 	printf "%s\n" \
 	"Help" \
@@ -19,14 +29,14 @@ function helpFunction(){
 	"Ex. ./SCRIPT run ARG ARG"
 }
 
-## Function to run program
+# Function to run program
 function runProgram(){
 	printf "%s\n" \
 	"RUN" \
 	"----------------------------------------------------"
 }
 
-## Main, read passed flags
+# Main, read passed flags
 	printf "%s\n" \
 	"PROGRAM NAME" \
 	"----------------------------------------------------" \
@@ -34,7 +44,7 @@ function runProgram(){
 	"Checking flags passed" \
 	"----------------------------------------------------"
 
-## Check passed flags
+# Check passed flags
 case "$1" in
 [Hh]elp)
 	printf "%s\n" \
@@ -51,10 +61,10 @@ case "$1" in
 	;;
 *)
 	printf "%s\n" \
-	"ISSUE DETECTED - Invalid input detected!" \
+	"${red}ISSUE DETECTED - Invalid input detected!" \
 	"----------------------------------------------------" \
 	"Running help script and exiting." \
-	"Re-run script with valid input"
+	"Re-run script with valid input${normal}"
 	helpFunction
 	exit
 	;;

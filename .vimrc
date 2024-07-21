@@ -268,9 +268,6 @@ Plug 'pprovost/vim-ps1'
 " Multi-cursor plugin
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-" Taglist plugin
-"Plug 'yegappan/taglist'
-
 " Tagbar plugin
 Plug 'preservim/tagbar'
 
