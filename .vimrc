@@ -177,38 +177,14 @@ let g:ale_fix_on_save = 1
 
 " ALE Linter settings
 " pylint needs to be installed
-" rustfmt needs to be installed
 let g:ale_linters = {'python':['pylint'],
         \'cpp':['g++'],
         \'c':['gcc'],
 	    \'powershell':['powershell'],
 	    \'bash': ['spellcheck'],
-	    \'go': ['gopls', 'golangci-lint', 'gofmt'],
 	    \'perl': ['perl','perlcritic']}
 let g:ale_fixers = { '*': ['trim_whitespace', 'remove_trailing_lines'],
-        \'cpp': ['clangtidy','clang-format'],
-        \'rust': ['rustfmt']}
-
-" " Rust vim stuff
-" Run rustfmt automatically when saving to buffer
-let g:rustfmt_autosave = 1
-
-" " Go Vim stuff
-" don't jump to errors after metalinter is invoked
-let g:go_jump_to_error = 0
-
-" run go imports on file save
-let g:go_fmt_command = "goimports"
-
-" automatically highlight variable your cursor is on
-let g:go_auto_sameids = 0
-
-" gopls config for vim-go
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-
-" Disable auto template in favor of my own
-let g:go_template_autocreate = 0
+                        \'cpp': ['clangtidy','clang-format']}
 
 " " Vim Template stuff
 if has("autocmd")
@@ -217,9 +193,7 @@ if has("autocmd")
     autocmd BufNewFile *.pl 0r ~/.vim/templates/skeleton.pl
     autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
     autocmd BufNewFile *.ps1 0r ~/.vim/templates/skeleton.ps1
-    autocmd BufNewFile *.rs 0r ~/.vim/templates/skeleton.rs
     autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
-    autocmd BufNewFile *.go 0r ~/.vim/templates/skeleton.go
   augroup END
 endif
 
@@ -255,12 +229,6 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 " ALE Linter
 Plug 'dense-analysis/ale'
-
-" rust.vim
-Plug 'rust-lang/rust.vim'
-
-" vim.go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " powershell.vim
 Plug 'pprovost/vim-ps1'
