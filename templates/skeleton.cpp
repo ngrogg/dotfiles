@@ -1,13 +1,11 @@
-/* PROGRAM
- * DESCRIPTION
+/* PROGRAM NAME
+ * PROGRAM DESCRIPTION
  * By Nicholas Grogg
  * */
 
 // Import statments 
 #include <cstdlib>
 #include <iostream>
-
-using namespace std;
 
 // Function to run program 
 void runProgram(){

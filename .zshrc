@@ -79,7 +79,7 @@ autoload -Uz vcs_info
 precmd () { vcs_info }
 
 ## Show git status %s Begin color %F current branch %b end color %f
-zstyle ':vcs_info:git:*' formats ' %s(%F{green}%b%f)'
+zstyle ':vcs_info:git:*' formats ' %s(%F{yellow}%b%f)'
 
 ## Set up the prompt with git branch name
 setopt PROMPT_SUBST
