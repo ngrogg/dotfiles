@@ -73,15 +73,15 @@ set statusline=
 " Show current mode
 " Define mode options
 let g:currentmode={
+       \ 'c'  : 'Command ',
+       \ 'i'  : 'INSERT ',
        \ 'n'  : 'NORMAL ',
+       \ 'R'  : 'R ',
+       \ 'Rv' : 'V·Replace ',
+       \ 't'  : 'Term ',
        \ 'v'  : 'VISUAL ',
        \ 'V'  : 'V·Line ',
        \ "\<C-V>" : 'V·Block ',
-       \ 'i'  : 'INSERT ',
-       \ 't'  : 'Term ',
-       \ 'R'  : 'R ',
-       \ 'Rv' : 'V·Replace ',
-       \ 'c'  : 'Command ',
        \}
 
 " Define color
@@ -178,23 +178,28 @@ let g:ale_fix_on_save = 1
 
 " ALE Linter settings
 " pylint needs to be installed
-let g:ale_linters = {'python':['pylint'],
-        \'cpp':['g++'],
+let g:ale_linters = {
+        \'bash': ['spellcheck','shell'],
         \'c':['gcc'],
+        \'cpp':['g++'],
+	    \'perl': ['perl','perlcritic'],
 	    \'powershell':['powershell'],
-	    \'bash': ['spellcheck'],
-	    \'perl': ['perl','perlcritic']}
-let g:ale_fixers = { '*': ['trim_whitespace', 'remove_trailing_lines'],
-                        \'cpp': ['clangtidy','clang-format']}
+        \'python':['pylint']
+        \}
+
+let g:ale_fixers = {
+        \'*': ['trim_whitespace', 'remove_trailing_lines'],
+        \'cpp': ['clangtidy','clang-format']
+        \}
 
 " " Vim Template stuff
 if has("autocmd")
   augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-    autocmd BufNewFile *.pl 0r ~/.vim/templates/skeleton.pl
-    autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
-    autocmd BufNewFile *.ps1 0r ~/.vim/templates/skeleton.ps1
     autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+    autocmd BufNewFile *.pl 0r ~/.vim/templates/skeleton.pl
+    autocmd BufNewFile *.ps1 0r ~/.vim/templates/skeleton.ps1
+    autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
   augroup END
 endif
 
