@@ -8,8 +8,8 @@ use strict;
 
 # Function to run program
 sub runProgram {
-	print "PROGRAM NAME\n";
-	print "----------------------------------------------------\n";
+    print "PROGRAM NAME\n";
+    print "----------------------------------------------------\n";
 }
 
 # Run the function

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# PROGRAM
+# PROGRAM NAME
 # DESCRIPTION
 # By Nicholas Grogg
 

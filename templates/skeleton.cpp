@@ -9,11 +9,14 @@
 
 // Function to run program 
 void runProgram(){
-	// Declare variables 
+    // Declare variables 
 }
 
 int main(){
-	// Run program function
-	runProgram();
-	return 0;
+    // Output program name
+    std::cout << "PROGRAM NAME" << std::endl;
+
+    // Run program function
+    runProgram();
+    return 0;
 }
