@@ -7,6 +7,10 @@
 #include <cstdlib>
 #include <iostream>
 
+// Namespace statements
+using std::cout;
+using std::endl;
+
 // Function to run program 
 void runProgram(){
     // Declare variables 
@@ -14,7 +18,7 @@ void runProgram(){
 
 int main(){
     // Output program name
-    std::cout << "PROGRAM NAME" << std::endl;
+    cout << "PROGRAM NAME" << endl;
 
     // Run program function
     runProgram();
