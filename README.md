@@ -13,9 +13,8 @@ Included are the following files: <br>
 * **.tmux.conf**, Tmux configuration file. Goes in `~/.tmux.conf`.
 * **.vimrc**, Vim configuration file. Goes in `~/.vimrc`. To use as is requires the following packages (on DEB based systems):
 	* ALE
-		- Pylint
-		- Rustfmt
+		- pylint
 	* YouCompleteMe
 	 	- build-essential cmake3 python3-dev
-		- Install YouCompleteMe with clangd, golang and rust support: `cd ~/.vim/plugged/YouCompleteMe; python3 install.py --clangd-completer --go-completer --rust-completer`
+		- Install YouCompleteMe with clangd support: `cd ~/.vim/plugged/YouCompleteMe; python3 install.py --clangd-completer`
 * **.zshrc**, ZSH configuration file. Goes in `~/.zshrc`. Requires that filepath `~/.zsh/cache' exists.
