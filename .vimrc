@@ -196,6 +196,7 @@ let g:ale_fixers = {
 if has("autocmd")
   augroup templates
     autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+    autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
     autocmd BufNewFile *.pl 0r ~/.vim/templates/skeleton.pl
     autocmd BufNewFile *.ps1 0r ~/.vim/templates/skeleton.ps1
     autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
