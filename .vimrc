@@ -189,14 +189,15 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
         \'*': ['trim_whitespace', 'remove_trailing_lines'],
+        \'c': ['clangtidy','clang-format'],
         \'cpp': ['clangtidy','clang-format']
         \}
 
 " " Vim Template stuff
 if has("autocmd")
   augroup templates
-    autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
     autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
+    autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
     autocmd BufNewFile *.pl 0r ~/.vim/templates/skeleton.pl
     autocmd BufNewFile *.ps1 0r ~/.vim/templates/skeleton.ps1
     autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
