@@ -217,7 +217,13 @@ set splitbelow
 set splitright
 
 " " Keybindings
+" Remap jj to escape
 imap jj <esc>
+
+" Auto close test for (, [, {, in insert mode
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
 
 " " vim-plug stuff
 if empty(glob('~/.vim/autoload/plug.vim'))
