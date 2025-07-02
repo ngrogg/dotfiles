@@ -1,0 +1,15 @@
+{
+    "editor.fontSize": 15,
+    "editor.cursorStyle": "block",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.startupEditor": "none",
+    "vim.statusBarColors.normal": "",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ]
+}
