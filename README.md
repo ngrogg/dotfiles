@@ -10,6 +10,7 @@ Included are the following files: <br>
 * **bin**, bin folder for `~/bin`. 
   - **passgen**, BASH script to generate passwords
   - **colors**, BASH script list colors in console. Useful for vimrc configs and the like. 
+* **colors**, colors folder for `~/.vim`. Used for custom vim themes. Has habamax theme for older Vim 8 install as theme is from Vim 9.
 * **Microsoft.PowerShell_profile.ps1**, PowerShell rc file. Goes in `~/.config/powershell/Microsoft.PowerShell_profile.ps1` on Linux.
 * **.pylintrc**, pylint rc file. Goes in `~/.pylintrc`.
 * **settings.json**, VSCode settings.json file. Goes in `~/.config/Code/User/settings.json`.
