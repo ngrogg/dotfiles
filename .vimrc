@@ -19,6 +19,13 @@ set clipboard=unnamedplus
 " Turn syntax on by default
 syntax on
 
+" Disable .wiki syntax highlighting
+" " Tell vim which filetypes are wiki file types
+autocmd BufRead,BufNewFile *.wiki set filetype=wiki
+
+" " Set syntax off for wiki files
+autocmd FileType wiki syntax off
+
 " Visual autocomplete for command menu
 set wildmenu
 
