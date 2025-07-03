@@ -7,9 +7,9 @@ These include files like my rc files and any other configurations I might have a
 ## Files
 Included are the following files: <br>
 * **50-zsa.rules**, a UDEV rules file for the ZSA keyboards I use. Goes in `/etc/udev/rules.d/50-zsa.rules` on Linux.
-* **bin**, bin folder for `~/bin`. 
+* **bin**, bin folder for `~/bin`.
   - **passgen**, BASH script to generate passwords
-  - **colors**, BASH script list colors in console. Useful for vimrc configs and the like. 
+  - **colors**, BASH script list colors in console. Useful for vimrc configs and the like.
 * **colors**, colors folder for `~/.vim`. Used for custom vim themes. Has habamax theme for older Vim 8 install as theme is from Vim 9.
 * **Microsoft.PowerShell_profile.ps1**, PowerShell rc file. Goes in `~/.config/powershell/Microsoft.PowerShell_profile.ps1` on Linux.
 * **.pylintrc**, pylint rc file. Goes in `~/.pylintrc`.
@@ -22,4 +22,6 @@ Included are the following files: <br>
 	* YouCompleteMe
 	 	- build-essential cmake3 python3-dev
 		- Install YouCompleteMe with clangd support: `cd ~/.vim/plugged/YouCompleteMe; python3 install.py --clangd-completer`
+    Also requires the `colors` and `template` directories in the `~/.vim` directory. <br>
+* **.vimrc.simple**, Vim configuration file. A simplified version that doesn't use plugins or additional files. Goes in `~/.vimrc`
 * **.zshrc**, ZSH configuration file. Goes in `~/.zshrc`. Requires that filepath `~/.zsh/cache' exists.
