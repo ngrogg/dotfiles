@@ -7,7 +7,9 @@ These include files like my rc files and any other configurations I might have a
 ## Files
 Included are the following files: <br>
 * **50-zsa.rules**, a UDEV rules file for the ZSA keyboards I use. Goes in `/etc/udev/rules.d/50-zsa.rules` on Linux.
-* **bin**, bin folder for `~/bin`. Has a script to generate passwords and nothing else for expansions.
+* **bin**, bin folder for `~/bin`. 
+  - **passgen**, BASH script to generate passwords
+  - **colors**, BASH script list colors in console. Useful for vimrc configs and the like. 
 * **Microsoft.PowerShell_profile.ps1**, PowerShell rc file. Goes in `~/.config/powershell/Microsoft.PowerShell_profile.ps1` on Linux.
 * **.pylintrc**, pylint rc file. Goes in `~/.pylintrc`.
 * **settings.json**, VSCode settings.json file. Goes in `~/.config/Code/User/settings.json`.
