@@ -65,7 +65,7 @@ set number
 set relativenumber
 
 " Set vim colorscheme
-colorscheme desert
+colorscheme habamax 
 
 " configure CursorLines
 set cursorline
