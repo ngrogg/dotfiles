@@ -65,12 +65,12 @@ set number
 set relativenumber
 
 " Set vim colorscheme
-colorscheme habamax 
+colorscheme habamax
 
 " configure CursorLines
 set cursorline
 hi CursorLine cterm=NONE ctermbg=232 ctermfg=15
-hi CursorLineNr cterm=bold ctermbg=33 ctermfg=232
+hi CursorLineNr cterm=bold ctermbg=10 ctermfg=232
 
 " " Vim Statusline
 " Enable statusline
@@ -92,7 +92,7 @@ let g:currentmode={
        \}
 
 " Define color
-highlight Status1 ctermbg=33 ctermfg=232
+highlight Status1 ctermbg=10 ctermfg=232
 highlight Status2 ctermbg=232 ctermfg=15
 
 " Append to status line
