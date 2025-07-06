@@ -8,6 +8,7 @@
 #include <iostream>
 
 // Namespace statements
+using std::cin;
 using std::cout;
 using std::endl;
 
