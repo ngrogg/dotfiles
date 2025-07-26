@@ -6,7 +6,6 @@ These include files like my rc files and any other configurations I might have a
 
 ## Files
 Included are the following files: <br>
-* **50-zsa.rules**, a UDEV rules file for the ZSA keyboards I use. Goes in `/etc/udev/rules.d/50-zsa.rules` on Linux.
 * **bin**, bin folder for `~/bin`.
   - **passgen**, BASH script to generate passwords
   - **colors**, BASH script list colors in console. Useful for vimrc configs and the like.
@@ -24,4 +23,5 @@ Included are the following files: <br>
 		- Install YouCompleteMe with clangd support: `cd ~/.vim/plugged/YouCompleteMe; python3 install.py --clangd-completer`
     Also requires the `colors` and `template` directories in the `~/.vim` directory. <br>
 * **.vimrc.simple**, Vim configuration file. A simplified version that doesn't use plugins or additional files. Goes in `~/.vimrc`
+* **zsaFiles**, Layout files and UDECV rule files for ZSA keyboards.
 * **.zshrc**, ZSH configuration file. Goes in `~/.zshrc`. Requires that filepath `~/.zsh/cache' exists.
