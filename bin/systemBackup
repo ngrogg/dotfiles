@@ -1,0 +1,69 @@
+#!/usr/bin/bash
+
+# Backup
+# BASH script to backup system files
+# By Nicholas Grogg
+
+# Help function
+function helpFunction(){
+	printf "%s\n" \
+	"Help" \
+	"----------------------------------------------------" \
+	" " \
+	"help/Help" \
+	"* Display this help message and exit" \
+	" " \
+	"backup/Backup" \
+	"* Backup system folders" \
+    " "
+}
+
+# Function to run program
+function runProgram(){
+	printf "%s\n" \
+	"Backing Up" \
+	"----------------------------------------------------"
+
+    ## Create backup folder
+    cd ~/
+    mkdir -p ~/backup/backup-$(date +%Y%m%d)
+
+    ## Zip folders to backup folders
+    for dir in Documents Downloads Music Pictures Videos; do
+            zip -r ~/backup/backup-$(date +%Y%m%d)/$dir-$(date +%Y%m%d).zip $dir
+    done
+}
+
+# Main, read passed flags
+printf "%s\n" \
+"System Backup" \
+"----------------------------------------------------" \
+" " \
+"Checking flags passed" \
+"----------------------------------------------------"
+
+# Check passed flags
+case "$1" in
+[Hh]elp)
+	printf "%s\n" \
+	"Running Help function" \
+	"----------------------------------------------------"
+	helpFunction
+	exit
+	;;
+[Bb]ackup)
+	printf "%s\n" \
+	"Running script" \
+	"----------------------------------------------------"
+	runProgram
+	;;
+*)
+	printf "%s\n" \
+	"ISSUE DETECTED - Invalid input detected!" \
+	"----------------------------------------------------" \
+	"Running help script and exiting." \
+	"Re-run script with valid input"
+	helpFunction
+	exit
+	;;
+esac
