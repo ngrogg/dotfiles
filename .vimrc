@@ -1,7 +1,7 @@
 " My .vimrc
 
 " " Vim basics
-" This must be first, because it changes other options as a side effect.
+" Disables vi mode and allows newer configuration options. Must be first.
 set nocompatible
 
 " Required for vimwiki
@@ -29,6 +29,9 @@ autocmd FileType wiki syntax off
 " Visual autocomplete for command menu
 set wildmenu
 
+" Show matching brackets when typed, moves for 3 seconds
+set showmatch matchtime=3
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -50,8 +53,17 @@ set ruler
 " Display incomplete commands
 set showcmd
 
+" Highlight search commands, use :noh to clear
+set hlsearch
+
 " Do incremental searching
 set incsearch
+
+" Case insensitive search
+set ignorecase
+
+" Use case sensitive search if capital letters are used
+set smartcase
 
 " Sets a tab to be four spaces
 set tabstop=4
