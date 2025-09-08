@@ -68,8 +68,22 @@ set smartcase
 " Sets a tab to be four spaces
 set tabstop=4
 
+" Set shiftwidth to set how many spaces make up an indentation level
+set shiftwidth=4
+
 " Converts tabs to spaces, useful if file moves to other systems
 set expandtab
+
+" Highlighting for indents
+"Display hidden characters such as tabs and end of line markers
+set list
+
+" Define how indenting will show up, should be four spaces
+set listchars=multispace:\ \ \ \ \|
+
+" Should be same but for tabs, uncomment if using tabs instead of spaces.
+" Remember to remove tab -> space configs
+" set listchars=tab:\ \ \ \ \|
 
 " " Visual changes
 " Show line numbers
