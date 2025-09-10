@@ -6,7 +6,7 @@
 
 -- Function to run program
 function runProgram()
-        print("Program Name!")
+    print("Program Name!")
 end
 
 -- Run the function

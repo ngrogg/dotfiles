@@ -9,10 +9,10 @@
 
 // Function Definition
 void runProgram(){
-        printf("PROGRAM NAME");
+    printf("PROGRAM NAME");
 }
 
 int main(int argc, char *argv[]) {
-        runProgram();
-        return 0;
+    runProgram();
+    return 0;
 }
