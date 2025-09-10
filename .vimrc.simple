@@ -99,16 +99,16 @@ set statusline=
 " Show current mode
 " Define mode options
 let g:currentmode={
-       \ 'c'  : 'Command ',
-       \ 'i'  : 'INSERT ',
-       \ 'n'  : 'NORMAL ',
-       \ 'R'  : 'R ',
-       \ 'Rv' : 'V·Replace ',
-       \ 't'  : 'Term ',
-       \ 'v'  : 'VISUAL ',
-       \ 'V'  : 'V·Line ',
-       \ "\<C-V>" : 'V·Block ',
-       \}
+    \ 'c'  : 'Command ',
+    \ 'i'  : 'INSERT ',
+    \ 'n'  : 'NORMAL ',
+    \ 'R'  : 'R ',
+    \ 'Rv' : 'V·Replace ',
+    \ 't'  : 'Term ',
+    \ 'v'  : 'VISUAL ',
+    \ 'V'  : 'V·Line ',
+    \ "\<C-V>" : 'V·Block ',
+    \}
 
 " Define color
 highlight Status1 ctermbg=10 ctermfg=232

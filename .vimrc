@@ -106,16 +106,16 @@ set statusline=
 " Show current mode
 " Define mode options
 let g:currentmode={
-       \ 'c'  : 'Command ',
-       \ 'i'  : 'INSERT ',
-       \ 'n'  : 'NORMAL ',
-       \ 'R'  : 'R ',
-       \ 'Rv' : 'V·Replace ',
-       \ 't'  : 'Term ',
-       \ 'v'  : 'VISUAL ',
-       \ 'V'  : 'V·Line ',
-       \ "\<C-V>" : 'V·Block ',
-       \}
+    \ 'c'  : 'Command ',
+    \ 'i'  : 'INSERT ',
+    \ 'n'  : 'NORMAL ',
+    \ 'R'  : 'R ',
+    \ 'Rv' : 'V·Replace ',
+    \ 't'  : 'Term ',
+    \ 'v'  : 'VISUAL ',
+    \ 'V'  : 'V·Line ',
+    \ "\<C-V>" : 'V·Block ',
+    \}
 
 " Define color
 highlight Status1 ctermbg=10 ctermfg=232
@@ -212,20 +212,20 @@ let g:ale_fix_on_save = 1
 " ALE Linter settings
 " pylint needs to be installed
 let g:ale_linters = {
-        \'bash': ['spellcheck','shell'],
-        \'c':['gcc'],
-        \'cpp':['g++'],
-        \'lua':['luac','luacheck'],
-	    \'perl': ['perl','perlcritic'],
-	    \'powershell':['powershell'],
-        \'python':['pylint']
-        \}
+    \'bash': ['spellcheck','shell'],
+    \'c':['gcc'],
+    \'cpp':['g++'],
+    \'lua':['luac','luacheck'],
+    \'perl': ['perl','perlcritic'],
+    \'powershell':['powershell'],
+    \'python':['pylint']
+    \}
 
 let g:ale_fixers = {
-        \'*': ['trim_whitespace', 'remove_trailing_lines'],
-        \'c': ['clangtidy','clang-format'],
-        \'cpp': ['clangtidy','clang-format']
-        \}
+    \'*': ['trim_whitespace', 'remove_trailing_lines'],
+    \'c': ['clangtidy','clang-format'],
+    \'cpp': ['clangtidy','clang-format']
+    \}
 
 " " Vim Template stuff
 if has("autocmd")

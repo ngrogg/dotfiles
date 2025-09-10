@@ -7,9 +7,9 @@
     "workbench.startupEditor": "none",
     "vim.statusBarColors.normal": "",
     "vim.insertModeKeyBindings": [
-        {
+         {
             "before": ["j", "j"],
             "after": ["<Esc>"]
-        }
+         }
     ]
 }
