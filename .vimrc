@@ -68,22 +68,14 @@ set smartcase
 " Sets a tab to be four spaces
 set tabstop=4
 
+" Set follow up tabs/deletions to 4 spaces as well
+set softtabstop=4
+
 " Set shiftwidth to set how many spaces make up an indentation level
 set shiftwidth=4
 
 " Converts tabs to spaces, useful if file moves to other systems
 set expandtab
-
-" Highlighting for indents
-"Display hidden characters such as tabs and end of line markers
-set list
-
-" Define how indenting will show up, should be four spaces
-set listchars=multispace:\ \ \ \ \|
-
-" Should be same but for tabs, uncomment if using tabs instead of spaces.
-" Remember to remove tab -> space configs
-" set listchars=tab:\ \ \ \ \|
 
 " " Visual changes
 " Show line numbers
@@ -97,6 +89,9 @@ colorscheme habamax
 set cursorline
 hi CursorLine cterm=NONE ctermbg=232 ctermfg=15
 hi CursorLineNr cterm=bold ctermbg=10 ctermfg=232
+
+" Set cursorcolumn for indents
+set cursorcolumn
 
 " " Vim Statusline
 " Enable statusline
@@ -229,15 +224,15 @@ let g:ale_fixers = {
 
 " " Vim Template stuff
 if has("autocmd")
-  augroup templates
-    autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
-    autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
-    autocmd BufNewFile *.lua 0r ~/.vim/templates/skeleton.lua
-    autocmd BufNewFile *.pl 0r ~/.vim/templates/skeleton.pl
-    autocmd BufNewFile *.ps1 0r ~/.vim/templates/skeleton.ps1
-    autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-  augroup END
+    augroup templates
+        autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
+        autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+        autocmd BufNewFile *.lua 0r ~/.vim/templates/skeleton.lua
+        autocmd BufNewFile *.pl 0r ~/.vim/templates/skeleton.pl
+        autocmd BufNewFile *.ps1 0r ~/.vim/templates/skeleton.ps1
+        autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+        autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
+    augroup END
 endif
 
 " " Vimsplit stuff
@@ -255,16 +250,15 @@ set splitright
 " Remap jj to escape
 imap jj <esc>
 
-" Auto close test for (, [, { in insert mode
-inoremap ( ()<Left>
+" Auto close test for [, { in insert mode
 inoremap [ []<Left>
 inoremap { {}<Left>
 
 " " vim-plug stuff
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
