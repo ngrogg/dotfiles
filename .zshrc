@@ -13,12 +13,13 @@ local LOCAL_ZSHRC=$HOME/.zshlocal/.zshrc
 # Add bin to path, to reduce aliases
 PATH=~/bin:$PATH
 PATH=~/.local/bin:$PATH
+# For Weidu
+PATH=~/local/WeiDU-Linux:$PATH
 
 # Aliases
 alias vi=vim
 alias g++='g++ -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror -std=c++20'
 alias ls='ls --color=auto'
-alias :q='exit'
 alias gits='cd ~/Documents/gits/; ls -l'
 alias ll='ls -l'
 
@@ -63,9 +64,6 @@ setopt HIST_IGNORE_DUPS
 ## Add commands to history as they are typed, don't wait until shell exit
 setopt INC_APPEND_HISTORY
 setopt HIST_REDUCE_BLANKS
-
-# Set autocd, don't need to type 'cd' anymore
-setopt autocd
 
 # Configure terminal
 ## Terminal title
