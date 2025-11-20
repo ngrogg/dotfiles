@@ -67,10 +67,6 @@ set softtabstop=4
 " Set shiftwidth to set how many spaces make up an indentation level
 set shiftwidth=4
 
-" Highlighting for indents
-"Display hidden characters such as tabs and end of line markers
-set list
-
 " Converts tabs to spaces, useful if file moves to other systems
 set expandtab
 
