@@ -1,8 +1,9 @@
 #!/usr/bin/lua
 
--- Program Name
--- Program Description
+-- Program
+-- Description
 -- By Nicholas Grogg
+-- Revision: TODO
 
 -- Function to run program
 function runProgram()

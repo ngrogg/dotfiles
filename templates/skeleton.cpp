@@ -1,6 +1,7 @@
-/* PROGRAM NAME
- * PROGRAM DESCRIPTION
+/* PROGRAM
+ * DESCRIPTION
  * By Nicholas Grogg
+ * Revision: TODO
  * */
 
 // Import statments 

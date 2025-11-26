@@ -2,9 +2,10 @@
 use warnings;
 use strict;
 
-# PROGRAM NAME
-# PROGRAM DESCRIPTION
+# PROGRAM
+# DESCRIPTION
 # By Nicholas Grogg
+# Revision: TODO
 
 # Function to run program
 sub runProgram {

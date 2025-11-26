@@ -1,6 +1,7 @@
-# SCRIPT
+# PROGRAM
 # DESCRIPTION
 # By Nicholas Grogg
+# Revision: TODO
 
 # Help
 function helpFunction {
