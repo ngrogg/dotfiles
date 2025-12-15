@@ -1,8 +1,19 @@
 #!/usr/bin/bash
 
-# Backup
-# BASH script to backup system files
+# System Backup
+# BASH Script to back up important system files
 # By Nicholas Grogg
+# Revision: 20251122
+
+# Color variables
+## Errors
+red=$(tput setaf 1)
+## Clear checks
+green=$(tput setaf 2)
+## User input required
+yellow=$(tput setaf 3)
+## Set text back to standard terminal font
+normal=$(tput sgr0)
 
 # Help function
 function helpFunction(){
@@ -14,8 +25,7 @@ function helpFunction(){
     "* Display this help message and exit" \
     " " \
     "backup/Backup" \
-    "* Backup system folders" \
-    " "
+    "* Backup user folders"
 }
 
 # Function to run program
@@ -28,10 +38,22 @@ function runProgram(){
     cd ~/
     mkdir -p ~/backup/backup-$(date +%Y%m%d)
 
-    ## Zip folders to backup folders
+    ## Populate command list
     for dir in Documents Downloads Music Pictures Videos; do
-         zip -r ~/backup/backup-$(date +%Y%m%d)/$dir-$(date +%Y%m%d).zip $dir
+        echo "tar -czf ~/backup/backup-$(date +%Y%m%d)/$dir-$(date +%Y%m%d).tar.gz $dir" >> commandList.txt
     done
+
+    ## Run command list with parallel
+    parallel -j4 -a commandList.txt
+
+    ## Cleanup
+    rm commandList.txt
+
+    printf "%s\n" \
+    "${green}Backup complete" \
+    "----------------------------------------------------" \
+    "Double check output files${normal}"
+
 }
 
 # Main, read passed flags
@@ -59,10 +81,10 @@ case "$1" in
     ;;
 *)
     printf "%s\n" \
-    "ISSUE DETECTED - Invalid input detected!" \
+    "${red}ISSUE DETECTED - Invalid input detected!" \
     "----------------------------------------------------" \
     "Running help script and exiting." \
-    "Re-run script with valid input"
+    "Re-run script with valid input${normal}"
     helpFunction
     exit
     ;;
