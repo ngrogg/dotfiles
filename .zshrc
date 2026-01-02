@@ -13,8 +13,8 @@ local LOCAL_ZSHRC=$HOME/.zshlocal/.zshrc
 # Add bin to path, to reduce aliases
 PATH=~/bin:$PATH
 PATH=~/.local/bin:$PATH
-# For Weidu
-PATH=~/local/WeiDU-Linux:$PATH
+# Uncomment for Weidu
+#PATH=~/local/WeiDU-Linux:$PATH
 
 # Aliases
 alias vi=vim
