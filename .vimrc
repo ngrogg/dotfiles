@@ -273,12 +273,6 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " ALE Linter
 Plug 'dense-analysis/ale'
 
-" powershell.vim
-Plug 'pprovost/vim-ps1'
-
-" Multi-cursor plugin
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-
 " Tagbar plugin
 Plug 'preservim/tagbar'
 
