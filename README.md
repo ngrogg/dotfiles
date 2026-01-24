@@ -9,6 +9,7 @@ Included are the following files: <br>
 * **bin**, bin folder for `~/bin`.
   - **colors**, BASH script list colors in console. Useful for vimrc configs and the like.
   - **passgen**, BASH script to generate passwords.
+  - **setRedshift.sh**, set Redshift temperature.
   - **systemBackup**, BASH script for backing system files.
 * **colors**, colors folder for `~/.vim`. Used for custom vim themes. Has habamax theme for older Vim 8 install as theme is from Vim 9.
 * **templates**, Vim template files. Goes in `~/.vim/templates` and is configured as part of my .vimrc below.
