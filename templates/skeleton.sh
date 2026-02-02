@@ -5,6 +5,9 @@
 # By Nicholas Grogg
 # Revision: TODO
 
+# Set exit on error
+set -e
+
 # Color variables
 ## Errors
 red=$(tput setaf 1)

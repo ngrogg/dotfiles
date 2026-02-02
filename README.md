@@ -12,6 +12,7 @@ Included are the following files: <br>
   - **setRedshift.sh**, set Redshift temperature.
   - **systemBackup**, BASH script for backing system files.
 * **colors**, colors folder for `~/.vim`. Used for custom vim themes. Has habamax theme for older Vim 8 install as theme is from Vim 9.
+* **revision.log**, changelog for scripts.
 * **templates**, Vim template files. Goes in `~/.vim/templates` and is configured as part of my .vimrc below.
 * **.tmux.conf**, Tmux configuration file. Goes in `~/.tmux.conf`.
 * **.vimrc**, Vim configuration file. Goes in `~/.vimrc`. To use as is requires the following packages (on DEB based systems):
@@ -22,7 +23,7 @@ Included are the following files: <br>
 		- Install YouCompleteMe with clangd support: `cd ~/.vim/plugged/YouCompleteMe; python3 install.py --clangd-completer`
     Also requires the `colors` and `template` directories in the `~/.vim` directory. <br>
 * **.vimrc.simple**, Vim configuration file. A simplified version that doesn't use plugins or additional files. Goes in `~/.vimrc`
-* *vscode*, VS Code files.
+* **vscode**, VS Code files.
   - **settings.json**, VSCode settings.json file. Goes in `~/.config/Code/User/settings.json`.
 * **zsaFiles**, Layout files and UDECV rule files for ZSA keyboards.
 * **.zshrc**, ZSH configuration file. Goes in `~/.zshrc`. Requires that filepath `~/.zsh/cache' exists.

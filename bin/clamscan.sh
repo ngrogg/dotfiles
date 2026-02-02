@@ -3,6 +3,10 @@
 # Clamscan
 # BASH script to scan directories
 # By Nicholas Grogg
+# Revision: 20260201
+
+# Set exit on error
+set -e
 
 # TODO Expand directories as needed
 # Array of directories to scan

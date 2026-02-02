@@ -1,0 +1,17 @@
+Log of major revisions for prod scripts, newest -> oldest
+
+Script:
+Revision:
+Change:
+
+Script: bin/clamscan.sh
+Revision: 20260201
+Change: Added set -e flag
+
+Script: templates/skeleton.sh
+Revision: 20260201
+Change: Added set -e flag
+
+Script: bin/systemBackup.sh
+Revision: 20260201
+Change: Added set -e flag

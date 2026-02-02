@@ -3,7 +3,10 @@
 # System Backup
 # BASH Script to back up important system files
 # By Nicholas Grogg
-# Revision: 20251122
+# Revision: 20260201
+
+# Set exit on error
+set -e
 
 # Color variables
 ## Errors
