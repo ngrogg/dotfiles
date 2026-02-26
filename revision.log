@@ -4,6 +4,10 @@ Script:
 Revision:
 Change:
 
+Script: templates/skeleton.sh
+Revision: 20260225
+Change: Added optional set flags
+
 Script: bin/clamscan.sh
 Revision: 20260201
 Change: Added set -e flag

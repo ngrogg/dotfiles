@@ -3,10 +3,14 @@
 # Program
 # Description
 # By Nicholas Grogg
-# Revision: TODO
+# Revision: 20260225
 
 # Set exit on error
 set -e
+# Uncomment for error on unset variables
+# set -u
+# Uncomment for exit on non-zero status from rightmost pipe command
+# set -o pipefail
 
 # Color variables
 ## Errors
