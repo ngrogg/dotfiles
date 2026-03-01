@@ -3,7 +3,7 @@
 # Program
 # Description
 # By Nicholas Grogg
-# Revision: 20260225
+# Revision: 20260228
 
 # Set exit on error
 set -e
@@ -74,6 +74,6 @@ case "$1" in
     "Running help script and exiting." \
     "Re-run script with valid input${normal}"
     helpFunction
-    exit
+    exit 1
     ;;
 esac

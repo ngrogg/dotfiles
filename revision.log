@@ -4,6 +4,14 @@ Script:
 Revision:
 Change:
 
+Script: bin/configureUFW.sh
+Revision: 20260228
+Change: Initial commit
+
+Script: templates/skeleton.sh
+Revision: 20260228
+Change: Added 1 to generic exit error
+
 Script: templates/skeleton.sh
 Revision: 20260225
 Change: Added optional set flags

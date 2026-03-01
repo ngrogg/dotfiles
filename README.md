@@ -8,6 +8,7 @@ These include files like my rc files and any other configurations I might have a
 Included are the following files: <br>
 * **bin**, bin folder for `~/bin`.
   - **colors**, BASH script list colors in console. Useful for vimrc configs and the like.
+  - **configureUFW.sh**, BASH script to configure UFW rules for public or home netwowkrs. See help function.
   - **passgen**, BASH script to generate passwords.
   - **setRedshift.sh**, set Redshift temperature.
   - **systemBackup**, BASH script for backing system files.
