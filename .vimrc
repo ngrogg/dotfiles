@@ -163,11 +163,11 @@ nmap <F8> :TagbarToggle<CR>
 " Set Tagbar width to 15%
 let g:tagbar_width = max([15, winwidth(0) / 5])
 
-" Autoclose Nerdtree if Tagbar and Nerdtree are the only windows open
+" Autoclose Nerdtree if the only windows open
 let g:tagbar_autoclose_netrw = 1
 
-" Tagbar set autofocus on open
-let g:tagbar_autofocus = 1
+" Disable Tagbar autofocus on open
+let g:tagbar_autofocus = 0
 
 " Set Tagbar to be case insensitive
 let g:tagbar_case_insensitive = 1
@@ -176,8 +176,8 @@ let g:tagbar_case_insensitive = 1
 let g:tagbar_show_tag_linenumbers = 1
 
 " " Nerdtree
-" Set default window size, based on percentage
-let g:NERDTreeWinSize= winwidth(0) * 15/100
+" Show lines of files
+let g:NERDTreeFileLines = 1
 
 " Toggle NERDTree
 nnoremap <silent> <F4> :NERDTreeToggle<CR>
@@ -185,8 +185,14 @@ nnoremap <silent> <F4> :NERDTreeToggle<CR>
 " Refresh NERDTree
 nnoremap <silent> <F5> :NERDTreeRefreshRoot<CR>
 
-" Close vim if NERDTree if is last window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+"autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
 
 " " Ale stuff
 " ALE disable auto-complete
