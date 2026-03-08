@@ -7,6 +7,13 @@ set nocompatible
 " Required for vimwiki
 filetype plugin on
 
+" Disable .wiki syntax highlighting
+" " Tell vim which filetypes are wiki file types
+autocmd BufRead,BufNewFile *.wiki set filetype=wiki
+
+" " Set syntax off for wiki files
+autocmd FileType wiki syntax off
+
 " force 256 colors
 set t_Co=256
 
@@ -18,13 +25,6 @@ set clipboard=unnamedplus
 
 " Turn syntax on by default
 syntax on
-
-" Disable .wiki syntax highlighting
-" " Tell vim which filetypes are wiki file types
-autocmd BufRead,BufNewFile *.wiki set filetype=wiki
-
-" " Set syntax off for wiki files
-autocmd FileType wiki syntax off
 
 " Visual autocomplete for command menu
 set wildmenu
@@ -156,25 +156,6 @@ let g:ycm_show_diagnostics_ui = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 
-" " Tagbar
-" Toggle Tagbar
-nmap <F8> :TagbarToggle<CR>
-
-" Set Tagbar width to 15%
-let g:tagbar_width = max([15, winwidth(0) / 5])
-
-" Autoclose Nerdtree if the only windows open
-let g:tagbar_autoclose_netrw = 1
-
-" Disable Tagbar autofocus on open
-let g:tagbar_autofocus = 0
-
-" Set Tagbar to be case insensitive
-let g:tagbar_case_insensitive = 1
-
-" Show line numbers for tags in tag window, 1 = absolute line numbers
-let g:tagbar_show_tag_linenumbers = 1
-
 " " Nerdtree
 " Show lines of files
 let g:NERDTreeFileLines = 1
@@ -187,9 +168,6 @@ nnoremap <silent> <F5> :NERDTreeRefreshRoot<CR>
 
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
-
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-"autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
@@ -269,27 +247,24 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" Install YouCompleteMe autocomplete
-Plug 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
-
-" Latex preview
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-
 " ALE Linter
 Plug 'dense-analysis/ale'
-
-" Tagbar plugin
-Plug 'preservim/tagbar'
 
 " Vim Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Vim Latex Live Preview
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
 " Vim NerdTree
 Plug 'preservim/nerdtree'
 
-" Vim wiki plugin
+" Vim vimwiki
 Plug 'vimwiki/vimwiki'
+
+" Vim YouCompleteMe autocomplete
+Plug 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
 
 call plug#end()
