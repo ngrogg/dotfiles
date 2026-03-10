@@ -26,5 +26,5 @@ Included are the following files: <br>
 * **.vimrc.simple**, Vim configuration file. A simplified version that doesn't use plugins or additional files. Goes in `~/.vimrc`
 * **vscode**, VS Code files.
   - **settings.json**, VSCode settings.json file. Goes in `~/.config/Code/User/settings.json`.
-* **zsaFiles**, Layout files and UDECV rule files for ZSA keyboards.
-* **.zshrc**, ZSH configuration file. Goes in `~/.zshrc`. Requires that filepath `~/.zsh/cache' exists.
+* **zsaFiles**, Layout files and UDEV rule files for ZSA keyboards.
+* **.zshrc**, ZSH configuration file. Goes in `~/.zshrc`. Change shell with `chsh -s $(which zsh)`. Requires that filepath `~/.zsh/cache' exists. Add with `mkdir -p ~/.zsh/cache`.
