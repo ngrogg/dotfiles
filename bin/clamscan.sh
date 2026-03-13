@@ -6,7 +6,7 @@
 # Revision: 20260201
 
 # Set exit on error
-set -e
+#set -e
 
 # TODO Expand directories as needed
 # Array of directories to scan
