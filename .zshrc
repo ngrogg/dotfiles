@@ -65,6 +65,27 @@ setopt HIST_IGNORE_DUPS
 setopt INC_APPEND_HISTORY
 setopt HIST_REDUCE_BLANKS
 
+# Functions to update system - Assumes rkhunter and flatpak are used.
+## Uncomment for DEB systems
+function updateSystem() {
+    sudo apt update -y
+    sudo apt upgrade -y
+    sudo apt autoremove -y
+    flatpak update
+    flatpak uninstall --unused
+    sudo /usr/bin/rkhunter --propupd
+}
+
+## Uncomment for RPM systems
+function updateSystem() {
+    sudo dnf update -y
+    sudo dnf upgrade -y
+    sudo dnf autoremove -y
+    flatpak update
+    flatpak uninstall --unused
+    sudo /usr/bin/rkhunter --propupd
+}
+
 # Configure terminal
 ## Terminal title
 print -n '\e]2;Happy Little Terminal\a'
