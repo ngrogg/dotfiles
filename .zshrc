@@ -18,6 +18,20 @@ alias ls='ls --color=auto'
 alias gits='cd ~/Documents/gits/; ls -l'
 alias ll='ls -l'
 
+# Shell options
+## Enable autocorrect
+setopt CORRECT
+## Enable autocorrect for arguments as well
+#setopt CORRECT_ALL
+
+# Enable autocd
+setopt AUTO_CD
+
+# Directory stack navigation, use 'cd -' and tab
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_SILENT
+
 # History
 ## Alias to show more history items
 alias history='fc -fl 1'
@@ -34,11 +48,6 @@ setopt EXTENDED_HISTORY
 
 ## Allow multiple terminal sessions to all append to one zsh command history
 setopt APPEND_HISTORY
-
-## Enable autocorrect
-setopt CORRECT
-## Enable autocorrect for arguments instead
-#setopt CORRECT_ALL
 
 ## When searching history don't display results already cycled through twice
 setopt HIST_FIND_NO_DUPS
