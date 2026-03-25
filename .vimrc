@@ -7,13 +7,6 @@ set nocompatible
 " Required for vimwiki
 filetype plugin on
 
-" Disable .wiki syntax highlighting
-" " Tell vim which filetypes are wiki file types
-autocmd BufRead,BufNewFile *.wiki set filetype=wiki
-
-" " Set syntax off for wiki files
-autocmd FileType wiki syntax off
-
 " force 256 colors
 set t_Co=256
 
@@ -167,7 +160,7 @@ nnoremap <silent> <F4> :NERDTreeToggle<CR>
 nnoremap <silent> <F5> :NERDTreeRefreshRoot<CR>
 
 " Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+"autocmd VimEnter * NERDTree | wincmd p
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
