@@ -4,6 +4,36 @@
 " Disables vi mode and allows newer configuration options. Must be first.
 set nocompatible
 
+" " vim-plug stuff
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+"" Install YouCompleteMe autocomplete
+Plug 'Valloric/YouCompleteMe'
+
+" ALE Linter
+Plug 'dense-analysis/ale'
+
+" Tagbar plugin
+Plug 'preservim/tagbar'
+
+" Vim Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Vim NerdTree
+Plug 'preservim/nerdtree'
+
+" Vim wiki plugin
+Plug 'vimwiki/vimwiki'
+
+call plug#end()
+
 " Required for vimwiki
 filetype plugin on
 
@@ -149,6 +179,9 @@ let g:ycm_show_diagnostics_ui = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 
+" YCM define global config file
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
+
 " " Nerdtree
 " Show lines of files
 let g:NERDTreeFileLines = 1
@@ -230,34 +263,3 @@ imap jj <esc>
 " Auto close test for [, { in insert mode
 inoremap [ []<Left>
 inoremap { {}<Left>
-
-" " vim-plug stuff
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/plugged')
-
-" ALE Linter
-Plug 'dense-analysis/ale'
-
-" Vim Fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" Vim Latex Live Preview
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-
-" Vim NerdTree
-Plug 'preservim/nerdtree'
-
-" Vim vimwiki
-Plug 'vimwiki/vimwiki'
-
-" Vim YouCompleteMe autocomplete
-Plug 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
-
-call plug#end()
