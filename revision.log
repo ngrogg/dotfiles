@@ -4,6 +4,14 @@ Script:
 Revision:
 Change:
 
+Script: .vimrc
+Revision: 20260324
+Change: Rearranged ycm configs to be by each other. Moved vim plug to top of vimrc.
+
+Script: .zshrc
+Revision: 20260324
+Change: Added autocorrect, reworked history, reworked autocd/directory navigation, Added prefix history search and adjusted terminal title and autocomplete.
+
 Script: bin/configureUFW.sh
 Revision: 20260228
 Change: Initial commit

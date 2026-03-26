@@ -1,4 +1,6 @@
 " My .vimrc
+" Goes in ~/.vimrc
+" Revision: 20260324
 
 " " Vim basics
 " Disables vi mode and allows newer configuration options. Must be first.

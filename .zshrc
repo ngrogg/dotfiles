@@ -1,3 +1,7 @@
+# My zshrc
+# Goes in ~/.zshrc
+# Revision: 20260324
+
 # Configure zsh files
 ## Define the place I store all my zsh config stuff
 local ZSH_CONF=$HOME/.zsh

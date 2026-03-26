@@ -7,12 +7,12 @@ These include files like my rc files and any other configurations I might have a
 ## Files
 Included are the following files: <br>
 * **bin**, bin folder for `~/bin`.
+  - **clamscan.sh**, BASH script to scan common system directories. Requires working clamscan/clamdscan install.
   - **colors**, BASH script list colors in console. Useful for vimrc configs and the like.
-  - **configureUFW.sh**, BASH script to configure UFW rules for public or home netwowkrs. See help function.
+  - **configureUFW.sh**, BASH script to configure UFW rules for public or home networks. See help function.
   - **passgen**, BASH script to generate passwords.
   - **setRedshift.sh**, set Redshift temperature.
-  - **systemBackup**, BASH script for backing system files.
-* **colors**, colors folder for `~/.vim`. Used for custom vim themes. Has habamax theme for older Vim 8 install as theme is from Vim 9.
+  - **systemBackup.sh**, BASH script for backing system files.
 * **revision.log**, changelog for scripts.
 * **templates**, Vim template files. Goes in `~/.vim/templates` and is configured as part of my .vimrc below.
 * **.tmux.conf**, Tmux configuration file. Goes in `~/.tmux.conf`.
@@ -24,7 +24,5 @@ Included are the following files: <br>
 		- Install YouCompleteMe with clangd support: `cd ~/.vim/plugged/YouCompleteMe; python3 install.py --clangd-completer`
     Also requires the `colors` and `template` directories in the `~/.vim` directory. <br>
 * **.vimrc.simple**, Vim configuration file. A simplified version that doesn't use plugins or additional files. Goes in `~/.vimrc`
-* **vscode**, VS Code files.
-  - **settings.json**, VSCode settings.json file. Goes in `~/.config/Code/User/settings.json`.
 * **zsaFiles**, Layout files and UDEV rule files for ZSA keyboards.
 * **.zshrc**, ZSH configuration file. Goes in `~/.zshrc`. Change shell with `chsh -s $(which zsh)`. Requires that filepath `~/.zsh/cache' exists. Add with `mkdir -p ~/.zsh/cache`.
