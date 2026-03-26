@@ -104,10 +104,7 @@ setopt HIST_REDUCE_BLANKS
 
 # Configure terminal
 ## Terminal title
-precmd () {
-    vcs_info
-    print -n '\e]2;Happy Little Terminal\a'
-}
+print -n '\e]2;Happy Little Terminal\a'
 
 # Prompt color and formatting
 ## Load vcs for showing current branch
