@@ -22,7 +22,7 @@ Included are the following files: <br>
 	* YouCompleteMe
 	 	- build-essential cmake3 python3-dev
 		- Install YouCompleteMe with clangd support: `cd ~/.vim/plugged/YouCompleteMe; python3 install.py --clangd-completer`
-    Also requires the `colors` and `template` directories in the `~/.vim` directory. <br>
+    Also requires the `template` directory in the `~/.vim` directory. <br>
 * **.vimrc.simple**, Vim configuration file. A simplified version that doesn't use plugins or additional files. Goes in `~/.vimrc`
 * **zsaFiles**, Layout files and UDEV rule files for ZSA keyboards.
 * **.zshrc**, ZSH configuration file. Goes in `~/.zshrc`. Change shell with `chsh -s $(which zsh)`. Requires that filepath `~/.zsh/cache' exists. Add with `mkdir -p ~/.zsh/cache`.
