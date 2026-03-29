@@ -84,7 +84,7 @@ function runProgram(){
         #### Basic block in/allow out settings
         sudo ufw default deny incoming
         sudo ufw default allow outgoing
-        sudo ufw default deny forward
+        sudo ufw default deny routed
 
         #### Allow loopback
         sudo ufw allow in on lo
@@ -108,7 +108,7 @@ function runProgram(){
         #### Basic block in/allow out settings
         sudo ufw default deny incoming
         sudo ufw default allow outgoing
-        sudo ufw default deny forward
+        sudo ufw default deny routed
 
         #### Allow loopback
         sudo ufw allow in on lo
