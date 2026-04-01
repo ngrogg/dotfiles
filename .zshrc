@@ -16,11 +16,11 @@ PATH=~/.local/bin:$PATH
 #PATH=~/local/WeiDU-Linux:$PATH
 
 # Aliases
-alias vi=vim
 alias g++='g++ -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror -std=c++20'
-alias ls='ls --color=auto'
 alias gits='cd ~/Documents/gits/; ls -l'
+alias ls='ls --color=auto'
 alias ll='ls -l'
+alias vi=vim
 
 # Shell options
 ## Enable autocorrect
