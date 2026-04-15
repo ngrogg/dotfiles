@@ -4,6 +4,10 @@ Script:
 Revision:
 Change:
 
+Script: templates/skeleton.sh
+Revision: 20260414
+Change: Updated formatting, added env for bash
+
 Script: .vimrc
 Revision: 20260324
 Change: Rearranged ycm configs to be by each other. Moved vim plug to top of vimrc.

@@ -1,9 +1,9 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Program
 # Description
 # By Nicholas Grogg
-# Revision: 20260228
+# Revision: 20260414
 
 # Set exit on error
 set -e
@@ -34,6 +34,7 @@ function helpFunction(){
     "run/Run" \
     "* PROGRAM DESCRIPTION " \
     "* ARGUMENTS " \
+    " " \
     "Ex. ./SCRIPT run ARG ARG"
 }
 
@@ -58,13 +59,15 @@ case "$1" in
     printf "%s\n" \
     "Running Help function" \
     "----------------------------------------------------"
+
     helpFunction
-    exit
+    exit 1
     ;;
 [Rr]un)
     printf "%s\n" \
     "Running script" \
     "----------------------------------------------------"
+
     runProgram
     ;;
 *)
@@ -73,6 +76,7 @@ case "$1" in
     "----------------------------------------------------" \
     "Running help script and exiting." \
     "Re-run script with valid input${normal}"
+
     helpFunction
     exit 1
     ;;
