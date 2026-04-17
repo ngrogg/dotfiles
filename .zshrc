@@ -87,7 +87,7 @@ setopt HIST_REDUCE_BLANKS
 #    sudo apt update -y
 #    sudo apt upgrade -y
 #    sudo apt autoremove -y
-#    flatpak update
+#    flatpak update --assumeyes
 #    flatpak uninstall --unused
 #    sudo /usr/bin/rkhunter --propupd
 #}
@@ -97,7 +97,7 @@ setopt HIST_REDUCE_BLANKS
 #    sudo dnf update -y
 #    sudo dnf upgrade -y
 #    sudo dnf autoremove -y
-#    flatpak update
+#    flatpak update --assumeyes
 #    flatpak uninstall --unused
 #    sudo /usr/bin/rkhunter --propupd
 #}
