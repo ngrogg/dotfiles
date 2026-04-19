@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Set Redshift
 # A BASH script to set redshift

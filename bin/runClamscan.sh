@@ -1,9 +1,9 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-# Clamscan
+# Run Clamscan
 # BASH script to scan directories
 # By Nicholas Grogg
-# Revision: 20260201
+# Revision: 20260419
 
 # Set exit on error
 #set -e

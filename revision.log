@@ -4,6 +4,22 @@ Script:
 Revision:
 Change:
 
+Script: bin/setRedshift.sh
+Revision: 20260419
+Change: Added env bash
+
+Script: bin/configureUFW.sh
+Revision: 20260419
+Change: Added env bash
+
+Script: bin/runClamscan.sh
+Revision: 20260419
+Change: Moved bin/clamscan.sh to bin/runClamscan.sh. Added env bash
+
+Script: bin/systemBackup.sh
+Revision: 20260419
+Change: Added env bash. Added more formatting.
+
 Script: templates/skeleton.sh
 Revision: 20260414
 Change: Updated formatting, added env for bash

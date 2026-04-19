@@ -1,9 +1,9 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Configure UFW
 # BASH script to switch between UFW rules
 # By Nicholas Grogg
-# Revision: 20260228
+# Revision: 20260419
 
 # Set exit on error
 set -e
