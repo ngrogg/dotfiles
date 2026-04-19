@@ -1,9 +1,9 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # System Backup
 # BASH Script to back up important system files
 # By Nicholas Grogg
-# Revision: 20260201
+# Revision: 20260419
 
 # Set exit on error
 set -e
@@ -37,16 +37,35 @@ function runProgram(){
     "Backing Up" \
     "----------------------------------------------------"
 
+    printf "%s\n" \
+    "${yellow}IMPORTANT: User Input Required" \
+    "----------------------------------------------------" \
+    "Value Confirmation" \
+    " " \
+    "Directories to back up: " \
+    "* ~/Documents " \
+    "* ~/Downloads " \
+    "* ~/Music" \
+    "* ~/Pictures" \
+    "* ~/Videos" \
+    " " \
+    "Press enter to proceed${normal}"
+
+    read junkInput
+
+    ## Date variable
+    backupDate=$(date +%Y%m%d)
+
     ## Create backup folder
     cd ~/
-    mkdir -p ~/backup/backup-$(date +%Y%m%d)
+    mkdir -p ~/backup/backup-$backupDate
 
     ## Populate command list
     for dir in Documents Downloads Music Pictures Videos; do
-        echo "tar -czf ~/backup/backup-$(date +%Y%m%d)/$dir-$(date +%Y%m%d).tar.gz $dir" >> commandList.txt
+        echo "tar -czf ~/backup/backup-$backupDate/$dir-$backupDate.tar.gz $dir" >> commandList.txt
     done
 
-    ## Run command list with parallel
+    ## Run command list with parallel to back up system
     parallel -j4 -a commandList.txt
 
     ## Cleanup
