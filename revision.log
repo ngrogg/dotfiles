@@ -4,6 +4,10 @@ Script:
 Revision:
 Change:
 
+Script: .vimrc
+Revision: 20260602
+Change: Removed tagbar from Plug section. Added vim-latex-live-preview to Plug section. Reworded vimwiki syntax section. Split bracket showmatch section. Expanded vim history. Reworked statusline. Removed commented out NERDTree line. Reworked hotkey/binding sections.
+
 Script: bin/setRedshift.sh
 Revision: 20260419
 Change: Added env bash

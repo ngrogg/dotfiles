@@ -1,6 +1,6 @@
 " My .vimrc
 " Goes in ~/.vimrc
-" Revision: 20260324
+" Revision: 20260602
 
 " " Vim basics
 " Disables vi mode and allows newer configuration options. Must be first.
@@ -21,12 +21,12 @@ Plug 'Valloric/YouCompleteMe'
 " ALE Linter
 Plug 'dense-analysis/ale'
 
-" Tagbar plugin
-Plug 'preservim/tagbar'
-
 " Vim Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Vim Latex Live Preview
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 " Vim NerdTree
 Plug 'preservim/nerdtree'
@@ -37,7 +37,17 @@ Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " Required for vimwiki
-filetype plugin on
+filetype plugin indent on
+
+" Disable .wiki syntax highlighting in augroup to prevent duplicate executions
+augroup VimWikiSettings
+    autocmd!
+    " " Tell vim which filetypes are wiki file types
+    autocmd BufRead,BufNewFile *.wiki set filetype=wiki
+
+    " " Set syntax off for wiki files
+    autocmd FileType wiki syntax off
+augroup END
 
 " force 256 colors
 set t_Co=256
@@ -54,8 +64,11 @@ syntax on
 " Visual autocomplete for command menu
 set wildmenu
 
-" Show matching brackets when typed, moves for 3 seconds
-set showmatch matchtime=3
+" Show matching brackets when typed
+set showmatch
+
+" Moves for 5 tenths of a second
+set matchtime=5
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -69,8 +82,8 @@ set backup
 " Keep an undo file (undo changes after closing)
 set undofile
 
-" Keep 50 lines of command line history
-set history=50
+" Keep 200 lines of command line history
+set history=200
 
 " Show the cursor position all the time
 set ruler
@@ -141,8 +154,8 @@ let g:currentmode={
 highlight Status1 ctermbg=10 ctermfg=232
 highlight Status2 ctermbg=232 ctermfg=15
 
-" Append to status line
-set statusline+=\ %{toupper(g:currentmode[mode()])}%#Status1#
+" Append to status line with a fallback for undefined modes
+set statusline+=\ %{toupper(get(g:currentmode,mode(),mode()))}%#Status1#
 
 " Show full file path
 set statusline+=File\ Path:%F
@@ -172,9 +185,13 @@ set statusline+=\\|
 " Show percentage through file
 set statusline+=%p%%\|
 
+" Clear colors
+set statusline+=%*
+
 " " Vim Plugin configurations
 " Vim preview stuff
-let g:livepreview_previewer = 'evince'
+"let g:livepreview_previewer = 'evince'
+"let g:livepreview_previewer = 'okular'
 
 " YCM disable error checking
 let g:ycm_show_diagnostics_ui = 0
@@ -193,9 +210,6 @@ nnoremap <silent> <F4> :NERDTreeToggle<CR>
 
 " Refresh NERDTree
 nnoremap <silent> <F5> :NERDTreeRefreshRoot<CR>
-
-" Start NERDTree and put the cursor back in the other window.
-"autocmd VimEnter * NERDTree | wincmd p
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
@@ -237,6 +251,7 @@ let g:ale_fixers = {
 " " Vim Template stuff
 if has("autocmd")
     augroup templates
+        autocmd!
         autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
         autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
         autocmd BufNewFile *.lua 0r ~/.vim/templates/skeleton.lua
@@ -248,19 +263,19 @@ if has("autocmd")
 endif
 
 " " Vimsplit stuff
-" Remap vimsplit navigation
-noremap <C-J> <C-W><C-J>
-noremap <C-K> <C-W><C-K>
-noremap <C-L> <C-W><C-L>
-noremap <C-H> <C-W><C-H>
+" Remap vimsplit navigation, limit to normal mode
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Split settings for a more natural split
 set splitbelow
 set splitright
 
 " " Keybindings
-" Remap jj to escape
-imap jj <esc>
+" Remap jj to escape, use inoremap in case another plugin uses j or escape
+inoremap jj <esc>
 
 " Auto close test for [, { in insert mode
 inoremap [ []<Left>
