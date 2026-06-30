@@ -38,7 +38,7 @@ call plug#end()
 
 " Vim global configs
 " " Enable loading plugin files for specific file types
-" " Required for vimwiki
+" " Also, required for vimwiki
 filetype plugin indent on
 
 " " force 256 colors
@@ -191,7 +191,18 @@ set statusline+=%p%%\|
 set statusline+=%*
 
 " Vim Plugin configurations
-" " Vim preview stuff
+" VimWiki Stuff
+" " Set syntax to markdown
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': 'md'}]
+
+" " Do not treat all markdown files as vimwiki files
+let g:vimwiki_global_ext = 0
+
+" " Prevent accidental creation of new wiki files in normal markdown files
+let g:vimwiki_ext2syntax = {}
+
+" Vim Preview Stuff
 "let g:livepreview_previewer = 'evince'
 "let g:livepreview_previewer = 'okular'
 
@@ -203,7 +214,7 @@ let g:ycm_enable_diagnostic_highlighting = 0
 " " YCM define global config file
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
 
-" Nerdtree
+" Nerdtree Stuff
 " " Show lines of files
 let g:NERDTreeFileLines = 1
 
