@@ -4,6 +4,10 @@ Script:
 Revision:
 Change:
 
+Script: .vimrc.simple
+Revision: 20260706
+Change: Limited keybindings to normal mode. Restructured comment levels for readability.
+
 Script: .vimrc
 Revision: 20260602
 Change: Removed tagbar from Plug section. Added vim-latex-live-preview to Plug section. Reworded vimwiki syntax section. Split bracket showmatch section. Expanded vim history. Reworked statusline. Removed commented out NERDTree line. Reworked hotkey/binding sections.

@@ -1,98 +1,110 @@
 " My .vimrc simplified, designed not to require plugins
+" Requires directory ~/.vim/backupdir if used as is
+" Revision: 20260706
 
-" " Vim basics
-" Disables vi mode and allows newer configuration options. Must be first.
+" Vim basics
+" " Disables vi mode and allows newer configuration options. Must be first.
 set nocompatible
 
-" Required for vimwiki
+" " Required for vimwiki
 filetype plugin on
 
-" force 256 colors
+" " force 256 colors
 set t_Co=256
 
-" Use UTF-8 encoding
+" " Use UTF-8 encoding
 set encoding=utf-8
 
-" Enable vim to use the system clipboard
+" " Enable vim to use the system clipboard
 set clipboard=unnamedplus
 
-" Turn syntax on by default
+" " Turn syntax on by default
 syntax on
 
-" Visual autocomplete for command menu
+" " Visual autocomplete for command menu
 set wildmenu
 
-" Show matching brackets when typed, moves for 3 seconds
+" " Show matching brackets when typed, moves for 3 seconds
 set showmatch matchtime=3
 
-" allow backspacing over everything in insert mode
+" " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Always set autoindenting on
+" " Always set autoindenting on
 set autoindent
 
-" Keep a backup file (restore to previous version)
+" " Keep a backup file (restore to previous version)
 set backup
 
-" Keep an undo file (undo changes after closing)
+" " Set where to save backup file, dir needs to exist
+set backupdir=~/.vim/backupdir
+
+" " Set backup extension to use timestamps instead of default "~"
+" " " Create backup before overwriting the current buffer
+set writebackup
+
+" " " Dynamic timestamp extension
+au BufWritePre * let &backupext = '@' . strftime('%F.%H:%M')
+
+" " Keep an undo file (undo changes after closing)
 set undofile
 
-" Keep 50 lines of command line history
+" " Keep 50 lines of command line history
 set history=50
 
-" Show the cursor position all the time
+" " Show the cursor position all the time
 set ruler
 
-" Display incomplete commands
+" " Display incomplete commands
 set showcmd
 
-" Highlight search commands, use :noh to clear
+" " Highlight search commands, use :noh to clear
 set hlsearch
 
-" Do incremental searching
+" " Do incremental searching
 set incsearch
 
-" Case insensitive search
+" " Case insensitive search
 set ignorecase
 
-" Use case sensitive search if capital letters are used
+" " Use case sensitive search if capital letters are used
 set smartcase
 
-" Sets a tab to be four spaces
+" " Sets a tab to be four spaces
 set tabstop=4
 
-" Set follow up tabs/deletions to 4 spaces as well
+" " Set follow up tabs/deletions to 4 spaces as well
 set softtabstop=4
 
-" Set shiftwidth to set how many spaces make up an indentation level
+" " Set shiftwidth to set how many spaces make up an indentation level
 set shiftwidth=4
 
-" Converts tabs to spaces, useful if file moves to other systems
+" " Converts tabs to spaces, useful if file moves to other systems
 set expandtab
 
-" " Visual changes
-" Show line numbers
+" Visual changes
+" " Show line numbers
 set number
 set relativenumber
 
-" Set vim colorscheme
+" " Set vim colorscheme
 colorscheme habamax
 
-" configure CursorLines
+" " configure CursorLines
 set cursorline
 hi CursorLine cterm=NONE ctermbg=232 ctermfg=15
 hi CursorLineNr cterm=bold ctermbg=10 ctermfg=232
 
-" Set cursorcolumn for indents
+" " Set cursorcolumn for indents
 set cursorcolumn
 
-" " Vim Statusline
-" Enable statusline
+" Vim Statusline
+" " Enable statusline
 set laststatus=2
 set statusline=
 
-" Show current mode
-" Define mode options
+" " Show current mode
+" " Define mode options
 let g:currentmode={
     \ 'c'  : 'Command ',
     \ 'i'  : 'INSERT ',
@@ -105,56 +117,56 @@ let g:currentmode={
     \ "\<C-V>" : 'V·Block ',
     \}
 
-" Define color
+" " Define color
 highlight Status1 ctermbg=10 ctermfg=232
 highlight Status2 ctermbg=232 ctermfg=15
 
-" Append to status line
+" " Append to status line
 set statusline+=\ %{toupper(g:currentmode[mode()])}%#Status1#
 
-" Show full file path
+" " Show full file path
 set statusline+=File\ Path:%F
 
-" Show if current file has been modified
+" " Show if current file has been modified
 set statusline+=%{&modified?'[+]':''}
 
-" Set following options to right of window
+" " Set following options to right of window
 set statusline+=%=
 
-" Whitespace
+" " Whitespace
 set statusline+=%#Status2#
 set statusline+=\\|
 
-" Show current line number
+" " Show current line number
 set statusline+=Line\ Number:%l
 
-" Whitespace
+" " Whitespace
 set statusline+=\\|
 
-" Show total number of lines in file
+" " Show total number of lines in file
 set statusline+=Total:%L
 
-" Whitespace
+" " Whitespace
 set statusline+=\\|
 
-" Show percentage through file
+" " Show percentage through file
 set statusline+=%p%%\|
 
-" " Vimsplit stuff
-" Remap vimsplit navigation
-noremap <C-J> <C-W><C-J>
-noremap <C-K> <C-W><C-K>
-noremap <C-L> <C-W><C-L>
-noremap <C-H> <C-W><C-H>
+" Vimsplit stuff
+" " Remap vimsplit navigation, limit to normal mode
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
-" Split settings for a more natural split
+" " Split settings for a more natural split
 set splitbelow
 set splitright
 
-" " Keybindings
-" Remap jj to escape
-imap jj <esc>
+" Keybindings
+" " Remap jj to escape, use inoremap in case another plugin uses j or escape
+inoremap jj <esc>
 
-" Auto close test for [, { in insert mode
+" " Auto close test for [, { in insert mode
 inoremap [ []<Left>
 inoremap { {}<Left>
