@@ -15,9 +15,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" " Install YouCompleteMe autocomplete
-Plug 'Valloric/YouCompleteMe'
-
 " " ALE Linter
 Plug 'dense-analysis/ale'
 
@@ -25,14 +22,17 @@ Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" " Vim Latex Live Preview
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-
 " " Vim NerdTree
 Plug 'preservim/nerdtree'
 
+" " Install YouCompleteMe autocomplete
+Plug 'Valloric/YouCompleteMe'
+
 " " Vim wiki plugin
 Plug 'vimwiki/vimwiki'
+
+" " Vim Latex Live Preview
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 call plug#end()
 
