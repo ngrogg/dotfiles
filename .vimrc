@@ -251,13 +251,23 @@ let g:ale_linters = {
     \'cpp':['g++'],
     \'lua':['luac','luacheck'],
     \'perl': ['perl','perlcritic'],
-    \'python':['pylint']
+    \'python':['pylint'],
+    \'sh': ['spellcheck','shell'],
+    \'terraform': ['terraform'],
+    \'yaml': ['ansible_lint']
     \}
 
 let g:ale_fixers = {
     \'*': ['trim_whitespace', 'remove_trailing_lines'],
     \'c': ['clangtidy','clang-format'],
-    \'cpp': ['clangtidy','clang-format']
+    \'cpp': ['clangtidy','clang-format'],
+    \'json': ['prettier'],
+    \'markdown': ['prettier'],
+    \'perl': ['perltidy'],
+    \'python': ['ruff','ruff_format'],
+    \'sh': ['shfmt'],
+    \'terraform': ['terraform'],
+    \'yaml': ['prettier']
     \}
 
 " " Vim Template stuff
@@ -289,5 +299,8 @@ set splitright
 inoremap jj <esc>
 
 " " Auto close test for [, { in insert mode
-inoremap [ []<Left>
-inoremap { {}<Left>
+inoremap ( ()<C-G>U<Left>
+inoremap [ []<C-G>U<Left>
+inoremap { {}<C-G>U<Left>
+inoremap ' ''<C-G>U<Left>
+inoremap " ""<C-G>U<Left>

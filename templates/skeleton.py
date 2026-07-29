@@ -1,14 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+"""Program Description"""
 
-# PROGRAM
-# DESCRIPTION
-# By Nicholas Grogg
-# Revision: TODO
-
-# Function to run program
-def runProgram():
+def run_program():
+    """Function to run program"""
     print('PROGRAM NAME')
     print('----------------------------------------------------')
 
 # Run main function
-runProgram()
+run_program()
