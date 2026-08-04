@@ -259,16 +259,17 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
     \'*': ['trim_whitespace', 'remove_trailing_lines'],
-    \'c': ['clangtidy','clang-format'],
-    \'cpp': ['clangtidy','clang-format'],
-    \'json': ['prettier'],
-    \'markdown': ['prettier'],
-    \'perl': ['perltidy'],
-    \'python': ['ruff','ruff_format'],
-    \'sh': ['shfmt'],
-    \'terraform': ['terraform'],
-    \'yaml': ['prettier']
+    \'c': ['clangtidy','clang-format','trim_whitespace', 'remove_trailing_lines'],
+    \'cpp': ['clangtidy','clang-format','trim_whitespace', 'remove_trailing_lines'],
+    \'json': ['prettier','trim_whitespace', 'remove_trailing_lines'],
+    \'markdown': ['prettier','trim_whitespace', 'remove_trailing_lines'],
+    \'perl': ['perltidy','trim_whitespace', 'remove_trailing_lines'],
+    \'python': ['ruff','ruff_format','trim_whitespace', 'remove_trailing_lines'],
+    \'sh': ['shfmt','trim_whitespace', 'remove_trailing_lines'],
+    \'terraform': ['terraform','trim_whitespace', 'remove_trailing_lines'],
+    \'yaml': ['prettier','trim_whitespace', 'remove_trailing_lines']
     \}
+
 
 " " Vim Template stuff
 if has("autocmd")
