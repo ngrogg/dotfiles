@@ -14,6 +14,11 @@ Included are the following files: <br>
   - **setRedshift.sh**, set Redshift temperature.
   - **systemBackup.sh**, BASH script for backing system files.
 * **revision.log**, changelog for scripts.
+* **sshConfigs**, SSH Config files.
+  - **config**, SSH Config file. Goes in `~/.ssh/config`.
+  - **ssh-agent.service**, systemD Service for ssh-agent. Goes in `~/.config/systemd/user`.
+  - **ssh_askpass.conf**, SSH Ask Pass config. Goes in `~/.config/environment.d`.
+  - **ssh_auth_socket.conf**, SSH Auth Sock config.  Goes in `~/.config/environment.d`.
 * **templates**, Vim template files. Goes in `~/.vim/templates` and is configured as part of my .vimrc below.
 * **.tmux.conf**, Tmux configuration file. Goes in `~/.tmux.conf`.
 * **.vimrc**, Vim configuration file. Goes in `~/.vimrc`. To use as is requires the following packages (on DEB based systems):
