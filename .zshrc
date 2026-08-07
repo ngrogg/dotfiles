@@ -1,6 +1,6 @@
 # My zshrc
 # Goes in ~/.zshrc
-# Revision: 20260324
+# Revision: 20260806
 
 # Configure zsh files
 ## Define the place I store all my zsh config stuff
@@ -101,6 +101,13 @@ setopt HIST_REDUCE_BLANKS
 #    flatpak update --assumeyes
 #    flatpak uninstall --unused
 #    sudo /usr/bin/rkhunter --propupd
+#}
+
+### Uncomment for Fedora Atomic systems
+#function updateSystem() {
+#    rpm-ostree upgrade
+#    flatpak update --assumeyes
+#    flatpak uninstall --unused
 #}
 
 # Configure terminal
