@@ -41,6 +41,10 @@ call plug#end()
 " " Also, required for vimwiki
 filetype plugin indent on
 
+" " Enable matchit plugin
+" " use % to move between opening/closing brackets/quotes
+runtime macros/matchit.vim
+
 " " force 256 colors
 set t_Co=256
 
