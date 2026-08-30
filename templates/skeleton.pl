@@ -1,6 +1,7 @@
-#!/usr/bin/perl
-use warnings;
+#!/usr/bin/env perl
+
 use strict;
+use warnings;
 
 # PROGRAM
 # DESCRIPTION
