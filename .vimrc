@@ -63,7 +63,7 @@ set wildmenu
 " " Show matching brackets when typed
 set showmatch
 
-" " Moves for 5 tenths of a second
+" " Moves for five tenths of a second
 set matchtime=5
 
 " " allow backspacing over everything in insert mode

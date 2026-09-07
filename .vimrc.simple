@@ -1,13 +1,18 @@
 " My .vimrc simplified, designed not to require plugins
 " Requires directory ~/.vim/backupdir if used as is
-" Revision: 20260706
+" Revision: 20260907
 
 " Vim basics
 " " Disables vi mode and allows newer configuration options. Must be first.
 set nocompatible
 
-" " Required for vimwiki
-filetype plugin on
+" Vim global configs
+" " Enable loading plugin files for specific file types
+filetype plugin indent on
+
+" " Enable matchit plugin
+" " use % to move between opening/closing brackets/quotes
+runtime macros/matchit.vim
 
 " " force 256 colors
 set t_Co=256
@@ -24,8 +29,11 @@ syntax on
 " " Visual autocomplete for command menu
 set wildmenu
 
-" " Show matching brackets when typed, moves for 3 seconds
-set showmatch matchtime=3
+" " Show matching brackets when typed
+set showmatch
+
+" " moves for five tenths seconds
+set matchtime=5
 
 " " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -49,8 +57,8 @@ au BufWritePre * let &backupext = '@' . strftime('%F.%H:%M')
 " " Keep an undo file (undo changes after closing)
 set undofile
 
-" " Keep 50 lines of command line history
-set history=50
+" " Keep 200 lines of command line history
+set history=200
 
 " " Show the cursor position all the time
 set ruler
@@ -152,6 +160,9 @@ set statusline+=\\|
 " " Show percentage through file
 set statusline+=%p%%\|
 
+" " Clear colors
+set statusline+=%*
+
 " Vimsplit stuff
 " " Remap vimsplit navigation, limit to normal mode
 nnoremap <C-J> <C-W><C-J>
@@ -168,5 +179,8 @@ set splitright
 inoremap jj <esc>
 
 " " Auto close test for [, { in insert mode
-inoremap [ []<Left>
-inoremap { {}<Left>
+inoremap ( ()<C-G>U<Left>
+inoremap [ []<C-G>U<Left>
+inoremap { {}<C-G>U<Left>
+inoremap ' ''<C-G>U<Left>
+inoremap " ""<C-G>U<Left>
