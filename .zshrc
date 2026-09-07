@@ -148,8 +148,16 @@ autoload -U history-search-end history-beginning-search-backward history-beginni
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 
-# Search up
-bindkey "$key[Up]" history-beginning-search-backward-end
+## Use $key array
+## Search up
+#bindkey "$key[Up]" history-beginning-search-backward-end
 
-# Search down
-bindkey "$key[Down]" history-beginning-search-forward-end
+## Search down
+#bindkey "$key[Down]" history-beginning-search-forward-end
+
+## Hardcoded escape sequences to bypass the empty $key array issue
+## Search up
+bindkey '^[[A' history-beginning-search-backward-end
+## Search down
+bindkey '^[[B' history-beginning-search-forward-end
+
