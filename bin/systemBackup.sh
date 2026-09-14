@@ -66,7 +66,7 @@ function runProgram(){
     done
 
     ## Run command list with parallel to back up system
-    parallel -j4 -a commandList.txt
+    parallel --bar --progress -j4 -a commandList.txt
 
     ## Cleanup
     rm commandList.txt
