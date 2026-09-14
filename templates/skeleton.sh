@@ -3,13 +3,13 @@
 # Program
 # Description
 # By Nicholas Grogg
-# Revision: 20260414
+# Revision: 20260914
 
 # Set exit on error
 set -e
-# Uncomment for error on unset variables
+# Set exit on error for unset variables
 # set -u
-# Uncomment for exit on non-zero status from rightmost pipe command
+# Set exit on error for non-zero status from rightmost pipe command
 # set -o pipefail
 
 # Color variables
