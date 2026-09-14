@@ -12,7 +12,7 @@ Included are the following files: <br>
   - **configureUFW.sh**, BASH script to configure UFW rules for public or home networks. See help function.
   - **passgen**, BASH script to generate passwords.
   - **setRedshift.sh**, set Redshift temperature.
-  - **systemBackup.sh**, BASH script for backing system files.
+  - **userBackup.sh**, BASH script for backing up user files.
 * **revision.log**, changelog for scripts.
 * **sshConfigs**, SSH Config files.
   - **config**, SSH Config file. Goes in `~/.ssh/config`.
