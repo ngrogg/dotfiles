@@ -14,7 +14,7 @@ using std::cout;
 using std::endl;
 
 // Function to run program 
-void runProgram(){
+void run_program(){
     // Declare variables 
 }
 
@@ -23,6 +23,6 @@ int main(){
     cout << "PROGRAM NAME" << endl;
 
     // Run program function
-    runProgram();
+    run_program();
     return 0;
 }

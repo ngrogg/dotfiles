@@ -9,11 +9,11 @@
 #include <stdlib.h>
 
 // Function Definition
-void runProgram(){
+void run_program(){
     printf("PROGRAM NAME");
 }
 
 int main(int argc, char *argv[]) {
-    runProgram();
+    run_program();
     return 0;
 }

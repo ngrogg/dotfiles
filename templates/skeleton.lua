@@ -6,9 +6,9 @@
 -- Revision: TODO
 
 -- Function to run program
-function runProgram()
+function run_program()
     print("Program Name!")
 end
 
 -- Run the function
-runProgram()
+run_program()

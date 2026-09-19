@@ -23,7 +23,7 @@ yellow=$(tput setaf 3)
 normal=$(tput sgr0)
 
 # Help function
-function helpFunction(){
+function help_function(){
     printf "%s\n" \
     "Help" \
     "----------------------------------------------------" \
@@ -39,7 +39,7 @@ function helpFunction(){
 }
 
 # Function to run program
-function runProgram(){
+function run_program(){
     printf "%s\n" \
     "RUN" \
     "----------------------------------------------------"
@@ -60,7 +60,7 @@ case "$1" in
     "Running Help function" \
     "----------------------------------------------------"
 
-    helpFunction
+    help_function
     exit 1
     ;;
 [Rr]un)
@@ -68,7 +68,7 @@ case "$1" in
     "Running script" \
     "----------------------------------------------------"
 
-    runProgram
+    run_program
     ;;
 *)
     printf "%s\n" \
@@ -77,7 +77,7 @@ case "$1" in
     "Running help script and exiting." \
     "Re-run script with valid input${normal}"
 
-    helpFunction
+    help_function
     exit 1
     ;;
 esac

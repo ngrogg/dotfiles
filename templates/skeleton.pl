@@ -9,10 +9,10 @@ use warnings;
 # Revision: TODO
 
 # Function to run program
-sub runProgram {
+sub run_program {
     print "PROGRAM NAME\n";
     print "----------------------------------------------------\n";
 }
 
 # Run the function
-runProgram();
+run_program();
