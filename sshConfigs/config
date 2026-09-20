@@ -1,2 +1,4 @@
 Host *
     AddKeysToAgent yes
+# Forward SSH key for Distrobox containers
+ForwardAgent yes
