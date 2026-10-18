@@ -6,6 +6,7 @@ These include files like my rc files and any other configurations I might have a
 
 ## Files
 Included are the following files: <br>
+* **.bashrc**, BASH RC file. Goes in `~/.bashrc`.
 * **bin**, bin folder for `~/bin`.
   - **clamscan.sh**, BASH script to scan common system directories. Requires working clamscan/clamdscan install.
   - **colors**, BASH script list colors in console. Useful for vimrc configs and the like.
