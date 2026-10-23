@@ -110,6 +110,19 @@ setopt HIST_REDUCE_BLANKS
 #    flatpak uninstall --unused
 #}
 
+## Function to update git repos
+function update-git-repos() {
+    current_dir=$(pwd)
+    cd ~/Documents/gits
+    for dir in $(ls); do
+        cd $dir
+        git pull
+        cd ..
+    done
+    cd $current_dir
+}
+
+
 # Configure terminal
 ## Terminal title
 print -n '\e]2;Happy Little Terminal\a'
@@ -160,4 +173,3 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey '^[[A' history-beginning-search-backward-end
 ## Search down
 bindkey '^[[B' history-beginning-search-forward-end
-

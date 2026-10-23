@@ -28,7 +28,8 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-# Function to update git repos
+# Functions
+## Function to update git repos
 function update-git-repos {
     current_dir=$(pwd)
     cd ~/Documents/gits
@@ -40,10 +41,17 @@ function update-git-repos {
     cd $current_dir
 }
 
+## Function to update Fedora Atomic system
+function update-system {
+    rpm-ostree upgrade
+    flatpak update --assumeyes
+    flatpak uninstall --unused
+}
+
 # Direct SSH clients to configured ssh agents
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# History configurations 
+# History configurations
 ## Increase history limits
 export HISTSIZE=50000
 export HISTFILESIZE=100000
@@ -60,11 +68,9 @@ shopt -s histappend
 ## Attempts to save multiline commands as a single history entry
 shopt -s cmdhist
 
-# Shell behavior configurations 
+# Shell behavior configurations
 ## Automatically update window size after each command
 shopt -s checkwinsize
 
 ## Prevents an empty command line from triggering filename completion
 shopt -s no_empty_cmd_completion
-
-
