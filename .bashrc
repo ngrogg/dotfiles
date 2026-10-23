@@ -29,7 +29,7 @@ fi
 unset rc
 
 # Function to update git repos
-function git_update_repos {
+function update-git-repos {
     current_dir=$(pwd)
     cd ~/Documents/gits
     for dir in $(ls); do
