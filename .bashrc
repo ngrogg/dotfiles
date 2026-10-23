@@ -28,6 +28,18 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+# Function to update git repos
+function git_update_repos {
+    current_dir=$(pwd)
+    cd ~/Documents/gits
+    for dir in $(ls); do
+        cd $dir
+        git pull
+        cd ..
+    done
+    cd $current_dir
+}
+
 # Direct SSH clients to configured ssh agents
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
