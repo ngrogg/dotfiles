@@ -281,6 +281,7 @@ if has("autocmd")
         autocmd!
         autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
         autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+        autocmd BufNewFile *.h 0r ~/.vim/templates/skeleton.h
         autocmd BufNewFile *.lua 0r ~/.vim/templates/skeleton.lua
         autocmd BufNewFile *.pl 0r ~/.vim/templates/skeleton.pl
         autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
